@@ -33,7 +33,7 @@ require_once 'Header.php';
 		</li>
 		<li>
 			<div class="box image-3">
-				<a href="#">
+				<a href="OngoingTrial.php">
 					<div class="try">
 							<h4>ONGOING TRIAL</h4>
 					</div>

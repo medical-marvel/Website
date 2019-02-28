@@ -34,7 +34,7 @@ for (i =1; i <100; i++) {
             break;
         }
 }
-++i;
+i+=1;
  database.collection("Lab").doc(user.uid).collection("Trial").doc("Trial_"+i).set(data).then(function() {
     console.log("Document successfully written!")});
 }

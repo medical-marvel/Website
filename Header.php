@@ -33,7 +33,9 @@
 </style>
 <script >
 	console.log(document.cookie);
-
+	function logout(){
+  firebase.auth().signOut();
+}
 </script>
 </head>
 <body>
@@ -44,6 +46,8 @@
 			<a style="text-decoration: none;" class="w3-bar-item w3-right w3-right" href="">Services</a>
 			<a style="text-decoration: none;" class="w3-bar-item w3-right w3-right" href="">Contact</a>
 			<a style="text-decoration: none;" href="Home.php"><i class="fa fa-home w3-bar-item w3-right w3-right" ></i></a>
+			<a style="text-decoration: none;" class="w3-bar-item w3-right w3-right" onclick="logout()" href="Login.php">Logout</a>
+
 		</div>
 	</div>
 	<div class="footer">
@@ -68,7 +72,7 @@
 	.then((snapshot) =>{
 		snapshot.forEach(doc =>{
 			var data=doc.data();
-			console.log(data["Address"]);
+			console.log(data["Email_id"]);
 		})
 	});
 		/*var db1=db.collection("Trial");
