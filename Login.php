@@ -13,7 +13,7 @@ require_once 'Header.php';
 			<div class="w3-col m6">
 				<img src="images/Logo.png" style="width:90%;margin-top: 40px;">
 			</div>
-			<div class="w3-col m6">
+			<div class="w3-col m5">
 				<h1 class="w3-center">Login</h1>
 				<a>User Name</a>
 				<input id="username" required class="w3-input  " autofocus type="text"  name="uname" placeholder="Enter Username">
