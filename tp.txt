@@ -1,0 +1,21 @@
+var db=database.collection("Lab").get()
+	.then((snapshot) =>{
+		snapshot.forEach(doc =>{
+			var data=doc.data();
+			console.log(data["Address"]);
+		})
+	});
+
+
+var db=database.collection("Lab").get()
+	.then((snapshot) =>{
+		snapshot.forEach(doc =>{
+			console.log(doc.data());
+		})
+	});
+
+var database = firebase.firestore();
+	var db=database.collection("Lab").get()
+	.then((snapshot) =>{
+		console.log(snapshot.docs[0]);
+			});
