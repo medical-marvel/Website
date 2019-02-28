@@ -25,16 +25,16 @@ function Addtrial() {
 }
 function writeUserData(user,data) {
 var database = firebase.firestore();
-var i;
-for (i =1; i <100; i++) {
-	var cityRef = database.collection("Lab").doc(user.uid).collection("Trial").doc("Trial_"+i);
-	var getDoc = cityRef.get();
+var i=0;
+	var cityRef = database.collection("Lab").doc(user.uid).collection("Trial");
+	 cityRef.get().then(function(result){
+	console.log(result);
+	i=result.size;
 	console.log(i);
-	if (!getDoc.exists) {
-            break;
-        }
-}
-i+=1;
+	i=i+1;
+console.log("Trial_"+i);
  database.collection("Lab").doc(user.uid).collection("Trial").doc("Trial_"+i).set(data).then(function() {
     console.log("Document successfully written!")});
+	});
+
 }
