@@ -19,3 +19,25 @@ var database = firebase.firestore();
 	.then((snapshot) =>{
 		console.log(snapshot.docs[0]);
 			});
+
+firebase.auth().createUserWithEmailAndPassword(email, password).then(function(user) {
+  return user.updateProfile({'displayName: document.getElementById("name").value});
+}).catch(function(error) {
+  console.log(error);
+})	
+
+
+var database = firebase.firestore();
+	var i=0;
+	var cityRef = database.collection("Lab").doc(user.uid).collection("Trial");
+	cityRef.get().then(function(result){
+		i=result.size;
+		i=i+1;
+		database.doc("Lab/"+user.uid+"/Trial/Trial_"+i).set(trialdata);
+	});
+	
+		database.collection("Lab").doc(user.uid).collection("Trial").doc("Trial_"+i).collection("Phase_1").set(phasedata).then(function() {
+				console.log("Document successfully written!")});
+
+
+}

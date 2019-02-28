@@ -9,28 +9,50 @@ function Addtrial() {
 		}
 	}
 	i=0;
-	var data={};
-			while(i<inputs.length)
+	//inputs of trial section
+	var trialinputs=document.getElementById('Trial_details').getElementsByTagName('input');
+	var trialtext=document.getElementById('Trial_details').getElementsByTagName('textarea');
+	//inputs of phase section
+
+	var phaseinputs=document.getElementById('Phase_details').getElementsByTagName('input');
+	var trialdata={};
+			while(i<trialinputs.length)
 			{
-				data[inputs[i].id]=inputs[i].value;
+				trialdata[trialinputs[i].id]=trialinputs[i].value;
 				i++;
 			}
+			i=0;
+			while(i<trialtext.length)
+			{
+				trialdata[trialtext[i].id]=trialtext[i].value;
+				i++;
+			}
+	i=0;
+	var phasedata={};
+			while(i<phaseinputs.length)
+			{
+				phasedata[phaseinputs[i].id]=phaseinputs[i].value;
+				i++;
+			}		
+console.log(trialdata);
+console.log(phasedata);
 	var user = firebase.auth().currentUser;
-	console.log(data);
-
-	
-
-  	writeUserData(user,data);
+  	writeUserData(user,trialdata,phasedata);
 
 }
-function writeUserData(user,data) {
-var database = firebase.firestore();
-var i=0;
+function writeUserData(user,trialdata,phasedata) {
+	var database = firebase.firestore();
+	var i=0;
 	var cityRef = database.collection("Lab").doc(user.uid).collection("Trial");
-	 cityRef.get().then(function(result){
-	i=result.size;
-	i=i+1;
- database.collection("Lab").doc(user.uid).collection("Trial").doc("Trial_"+i).set(data).then(function() {
-    console.log("Document successfully written!")});
-	});
+	cityRef.get().then(function(result){
+		i=result.size;
+		i=i+1;
+		database.doc("Lab/"+user.uid+"/Trial/Trial_"+i).set(trialdata);
+			console.log(phasedata);
+			database.doc("Lab/"+user.uid+"/Trial/Trial_"+i+"/Phase/Phase_1").set(phasedata).then(function() {
+				console.log("Document successfully written!")});
+		});
+
+
+
 }
