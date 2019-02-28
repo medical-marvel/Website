@@ -28,13 +28,9 @@ var database = firebase.firestore();
 var i=0;
 	var cityRef = database.collection("Lab").doc(user.uid).collection("Trial");
 	 cityRef.get().then(function(result){
-	console.log(result);
 	i=result.size;
-	console.log(i);
 	i=i+1;
-console.log("Trial_"+i);
  database.collection("Lab").doc(user.uid).collection("Trial").doc("Trial_"+i).set(data).then(function() {
     console.log("Document successfully written!")});
 	});
-
 }
