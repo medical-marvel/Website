@@ -45,11 +45,6 @@ firebase.auth().onAuthStateChanged(function(user) {
   } else {
     // No user is signed in.
     console.log(user);
-
   }
 });
-function logout(){
-  firebase.auth().signOut();
-   document.cookie = '$uid=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-   delete_cookie('$uid');
-}
+
