@@ -16,7 +16,6 @@ for (var i = 0; i < inputs.length; i++) {
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass)
     .then(function(user){
        var user = firebase.auth().currentUser;
-       document.cookie="$uid="+user.uid;
        window.location.href= 'Home.php';
     })
     .catch(function(error) {

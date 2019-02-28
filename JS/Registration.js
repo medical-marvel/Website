@@ -27,29 +27,30 @@ function Register(str){
 			}
 			//create user
 			firebase.auth().createUserWithEmailAndPassword(email, password)
-			.then(function(){
+			.then(function(user) {
+				return user.updateProfile({'displayName': str});
 				firebase.auth().signInWithEmailAndPassword(email, password)
-			.then(function(user){
-				var user = firebase.auth().currentUser;
-				console.log(user);
-				
-				//add user to database
-				database.collection(str).doc(user.uid).set(data)
-				.then(function(){
-					alert("registered successfully");
-					window.location.href= 'Home.php';
-				
+				.then(function(user){
+					var user = firebase.auth().currentUser;
+					console.log(user);
+					
+					//add user to database
+					database.collection(str).doc(user.uid).set(data)
+					.then(function(){
+						alert("registered successfully");
+						window.location.href= 'Home.php';
+						
+					})
+					
+					.catch(function(error) {
+						console.log(error)});
+					
 				})
-				
 				.catch(function(error) {
-					console.log(error)});
-				
-			})
-			.catch(function(error) {
-				// Handle Errors here.
-				alert("errorcode: "+error.code+"errormessage: "+error.message);
-				// ...
-			});	
+					// Handle Errors here.
+					alert("errorcode: "+error.code+"errormessage: "+error.message);
+					// ...
+				});	
 			})
 			.catch(function(error) {
 				alert("errorcode: "+error.code+"errormessage: "+error.message);
