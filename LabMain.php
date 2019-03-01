@@ -24,7 +24,7 @@ require_once 'Header.php';
 		</li>
 		<li>
 			<div class="box image-2">
-				<a href="Previous trial.php">
+				<a href="PreviousTrials.php">
 					<div class="try">
 							<h4>PREVIOUS TRIAL</h4>
 					</div>
