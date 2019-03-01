@@ -3,58 +3,46 @@ require_once 'Header.php';
 ?>
 <!DOCTYPE html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/Home.css">
+	<link rel="stylesheet" type="text/css" href="css/LabMain.css">
 
 </head>
 <body>
 	<!-- Header section -->
-<!-- Card section -->
-<script type="text/javascript">
-</script>
-<div class="cards">
-	<ul class="grid">
-		<li>
-			<div class="box image-1">
+	<!-- Card section -->
+	<script type="text/javascript">
+	</script>
+	<div class="cards">
+		<ul class="grid">
+			<li>
 				<a href="AddTrial.php">
-					<div class="try">
-							<h4>ADD NEW TRIAL</h4>
+					<div class="box">ADD NEW TRIAL
 					</div>
 				</a>
-			</div>
-		</li>
-		<li>
-			<div class="box image-2">
+			</li>
+			<li>
 				<a href="PreviousTrials.php">
-					<div class="try">
-							<h4>PREVIOUS TRIAL</h4>
+					<div class="box">PREVIOUS TRIAL
 					</div>
 				</a>
-			</div>
-		</li>
-		<li>
-			<div class="box image-3">
+			</li>
+			<li>
 				<a href="OngoingTrial.php">
-					<div class="try">
-							<h4>ONGOING TRIAL</h4>
+					<div class="box">ONGOING TRIAL
 					</div>
 				</a>
-			</div>
-		</li>
-		<li>
-			<div class="box image-4">
+			</li>
+			<li>
 				<a href="TrialRequests.php">
-					<div class="try">
-							<h4>TrialRequests</h4>
+					<div class="box">TRIAL REQUESTS
 					</div>
 				</a>
-			</div>
-		</li>
-	</ul>
-</div>
+			</li>
+		</ul>
+	</div>
 
-<!-- Footer section -->
-<div class="footer">
-&copy:2019 by Medical Marvel Developer
-</div>
+	<!-- Footer section -->
+	<div class="footer">
+		&copy:2019 by Medical Marvel Developer
+	</div>
 </body>
 </html>

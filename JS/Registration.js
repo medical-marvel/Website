@@ -37,7 +37,7 @@ function Register(str){
 					database.collection(str).doc(user.uid).set(data)
 					.then(function(){
 						alert("registered successfully");
-						window.location.href= 'Home.php';
+						window.location.href= 'LabMain.php';
 						
 					})
 					

@@ -23,8 +23,8 @@
 }
 
 .grid li{
-	width:328px;
-	height:328px;
+	width:300px;
+	height:200px;
 	display: inline-block;
 	margin:20px;
 }
@@ -38,42 +38,15 @@
 	-webkit-transition:0.3s ease-in-out,-webkit-transition 0.3s ease-in-out;
 	-moz-transition: 0.3s ease-in-out,-moz-transition:0.3s ease-in-out;
 	transition: 0.3s ease-in-out,transition 0.3s ease-in-out;
+	background:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.10));
+	background-size: cover;
+	text-align: middle;
+	vertical-align: middle;
+	line-height: 200px;
 }
 
 .box:hover{
 	transform: scale(1.05);
-}
-
-.image-1{
-	background:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.10));
-	background-size: cover;
-}
-.image-2{
-	background:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.10));
-	background-size: cover;
-}
-.image-3{
-	background:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.10));
-	background-size: cover;
-}
-.image-4{
-	background:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.10));
-	background-size: cover;
-}
-
-.box{
-position: absolute;
-width:inherit;
-height: inherit;
-}
-
-.try h4{
-	font-weight: 400;
-	color:#fff;
-	font-size: 35px;
-	margin:0 30px;
-	padding: 100px 0 0 0;
-	line-height: 1.5;
 }
 .box a{
 	text-decoration: none;
