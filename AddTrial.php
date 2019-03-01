@@ -40,7 +40,9 @@
 
 		</table>
 		</div>
-		<center><button style="margin-bottom: 20px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="Addtrial" onclick="Addtrial()" style="width:100px;">Submit</button></center>
+		<div class="w3-center">
+		<button style="margin-bottom: 20px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="Addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
+	</div>
 	</div>
 </body>
 </html>
