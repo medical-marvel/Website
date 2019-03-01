@@ -6,46 +6,31 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script type="text/javascript">
-		function myFunction() {
-			var x = document.getElementById("try1");
-			if (x.style.display === "none") {
-				x.style.display = "block";
-			} else {
-				x.style.display = "none";
-			}
-		}
-		function Myphase() {
-			var x = document.getElementById("phase1");
-			if (x.style.display === "none") {
-				x.style.display = "block";
-			} else {
-				x.style.display = "none";
-			}
-		}
-
-
-
-
-
 	</script>
+	<style type="text/css">
+		label{
+			font-size: 30px;
+		}
+	</style>
 </head>
 <body>
 	<h1 style="font-size: 40px;"><center><u>Ongoing Details</u></center></h1>
-	<div class="contain">
-		<table class="w3-table w3-center">
-			<tr>
-				<th>Trial Name </th>
-				<th>Current Phase</th>
-				<th>Patient FeedBacks</th>
-				<th>End Trial</th>
-			</tr>
-			<tr>
-				<td><label id="Trial_name" name="">Trial A</label></td>
-				<td><label id="Phase_status" name="">Phase 1</label></td>
-				<td><label id="Patientsd" name="">link</label></td>
-				<td style="text-align: center;font-size: 12px;"><button onclick="document.getElementById('id01').style.display='block'" class="fas fa-check-square"></button></td>
-			</tr>
-		</table>	
+	<div class="w3-container" style="display:inline-flex;">
+		<div class="w3-panel w3-card  " style="width:500px;height: 350px;margin-left:70px;border-radius: 10px;border: 10px solid #ffffcc;background-color: #34495e;color:white; " >
+			<label id="Phase">Phase</label><br>
+			<label id="StartingDate">Starting Date</label><br>
+			<label id="Ending_Date">Ending Date</label><br>
+			<label id="No.ofpatient">No.of Patient</label><br>
+			<button><a href="FeedBack.php">View FeedBack</a></button>
+		</div>
+		<div class="w3-panel w3-card  " style="width:500px;height: 350px;margin-left:70px;border-radius: 10px;border: 10px solid #ffffcc;background-color: #34495e;color:white; " >
+			<label id="Phase">Phase</label><br>
+			<label id="StartingDate">Starting Date</label><br>
+			<label id="Ending_Date">Ending Date</label><br>
+			<label id="No.ofpatient">No.of Patient</label><br>
+			<button onclick="document.getElementById('id01').style.display='block'">Completed Phase</button>
+		</div>
+
 	</div>
 	<div id="id01"  class="w3-modal">
 		<div class="w3-modal-content w3-animate-top " style="width:500px;height: 350px;">
