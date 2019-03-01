@@ -4,7 +4,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/AddTrial.css">
 	<link rel="stylesheet" type="text/css" href="css/Home.css">
-	<script src="JS/Addtrial.js">
+	<script src="JS/AddTrial.js">
 		function myfunction(){
 			alert("If you dont provide insurance, your Medical Trial will be least Recommended.");
 		}

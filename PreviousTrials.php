@@ -11,7 +11,7 @@ require_once 'Header.php';
 	<div id="trialbar" class="w3-card-4">
 	<button style="float: left;" onclick="loadtrial()">clickme</button>
 </div>
-<div class=" w3-card-4 w3-margin-left" id="trialinfo" >
+<div class=" w3-card-4" id="trialinfo" >
 </div>
 </body>
 </html>
