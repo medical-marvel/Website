@@ -21,6 +21,9 @@
 				<tr><th>Medicine Name </th><td><input required class="w3-input" type="textbox" id="Medicine_name" name="m1"></td></tr>
 				<tr><th>Purpose</th><td><input required class="w3-input" type="textbox" id="Purpose" name="p1"></td></tr>
 				<tr><th>Specific Treatments</th><td><textarea id="Specific_treatment" maxlength="1000" rows="2" cols="10"></textarea></td></tr>
+				<tr><th>Age Group Required</th><td><input type="checkbox" value="child" name="child">
+													<input type="checkbox" value="adult" name="adult">
+													<input type="checkbox" value="old" name="old"></td></tr>
 				<tr><th>Allergies </th><td><textarea required rows="2" id="Allergies" cols="10"></textarea></td></tr>
 				<tr><th>Recommended </th><td> <textarea required rows="2" id="Recommended" cols="10"></textarea></td></tr>
 				<tr><th>Not Recommended </th><td><textarea required rows="2" id="Not_recomended" cols="10"></textarea></td></tr>
