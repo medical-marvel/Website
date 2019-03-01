@@ -1,5 +1,5 @@
 function load(){
-	 setTimeout(loadtrial, 1000);
+	 setTimeout(loadtrial, 2000);
 }
 function loadtrial(){
 
