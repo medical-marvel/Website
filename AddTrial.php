@@ -19,13 +19,17 @@
 			<table>
 
 				<tr><th>Medicine Name </th><td><input required class="w3-input" type="textbox" id="Medicine_name" name="m1"></td></tr>
+				<!-- <tr><th>Phase status</th><td><input required class="w3-input" type="textbox" id="Phase_status" name="p1"></td></tr> -->
 				<tr><th>Purpose</th><td><input required class="w3-input" type="textbox" id="Purpose" name="p1"></td></tr>
-				<tr><th>Specific Treatments</th><td><textarea id="Specific_treatment" maxlength="1000" rows="2" cols="10"></textarea></td></tr>
-				<tr><th>Age Group Required</th><td><input type="checkbox" value="child" name="child">Child<br>
-													<input type="checkbox" value="adult" name="adult">Adult<br>
-													<input type="checkbox" value="old" name="old">Old</td></tr>
+				<!-- <tr><th>Specific Treatments</th><td><textarea id="Specific_treatment" maxlength="1000" rows="2" cols="10"></textarea></td></tr> -->
+				<tr><th>Age Group Required</th><td><input type="text" name="age" id="age"><label style="color: rgba(0,0,0,0.4);">(0:child,1:adult,2:old)</label></td></tr>
 				<tr><th>Allergies </th><td><textarea required rows="2" id="Allergies" cols="10"></textarea></td></tr>
+				<!-- <tr><th>Recommended </th><td> <textarea required rows="2" id="Recommended" cols="10"></textarea></td></tr> -->
 				<tr><th>Not Recommended </th><td><textarea required rows="2" id="Not_recomended" cols="10"></textarea></td></tr>
+				<tr><th>Number of Patients</th><td><input required class="w3-input" type="textbox" id="Patient_no" name="p1"></td></tr>
+<!-- 				<tr><th>WARNINGS AND PRECAUTIONS</th><td><textarea required rows="2" id="Warnings"  cols="10"></textarea></td></tr>
+				<tr><th>Do you have any Insurance ?</th><td><input required  type="radio" id="Insurance" name="n1" value="yes">Yes&nbsp&nbsp&nbsp&nbsp&nbsp<input type="radio" id="insurance"  name="n1" value="no">No</td></tr>
+				<tr><th>Insurance Number </th><td> <input reqiured class="w3-input" type="text" id="Insurance_no" name="i1"></td></tr> -->
 			</table>
 		</div>
 
