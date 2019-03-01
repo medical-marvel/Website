@@ -13,7 +13,5 @@ require_once 'Header.php';
 </div>
 <div class=" w3-card-4 w3-margin-left" id="trialinfo" >
 </div>
-
-
 </body>
 </html>
