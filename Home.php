@@ -42,9 +42,9 @@ require_once 'Header.php';
 		</li>
 		<li>
 			<div class="box image-4">
-				<a href="#">
+				<a href="TrialRequests.php">
 					<div class="try">
-							<h4>COLLABORATOR TRIALs</h4>
+							<h4>TrialRequests</h4>
 					</div>
 				</a>
 			</div>
