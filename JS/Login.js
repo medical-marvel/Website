@@ -17,7 +17,7 @@ for (var i = 0; i < inputs.length; i++) {
     .then(function(user){
        var user = firebase.auth().currentUser;
        console.log(user);
-       //window.location.href= 'Home.php';
+       window.location.href= 'LabMain.php';
     })
     .catch(function(error) {
     // Handle Errors here.
