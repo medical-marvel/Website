@@ -31,12 +31,13 @@ function displayinfo(id)
 {
 	var info=document.querySelector("#trialinfo");
 	var header = document.createElement("h4"); 
-
+	var div = document.createElement("div");
+	div.setAttribute("data-id",id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	console.log(id);
 	header.textContent=id;
-	info.appendChild(header);
+	div.appendChild(header);
 	var datastored=database.doc("Lab/"+user.uid+"/Trial/"+(id)).get()
 	.then((snapshot) => {
 		console.log(snapshot.data());
@@ -59,6 +60,7 @@ function displayinfo(id)
 			li.appendChild(p2);
 			ul.appendChild(li);
 		}
-		info.appendChild(ul);
+		div.appendChild(ul);
+		info.appendChild(div);
 	});
 }
