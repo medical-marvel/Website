@@ -28,7 +28,6 @@ function Register(str){
 			//create user
 			firebase.auth().createUserWithEmailAndPassword(email, password)
 			.then(function(user) {
-				return user.updateProfile({'displayName': str});
 				firebase.auth().signInWithEmailAndPassword(email, password)
 				.then(function(user){
 					var user = firebase.auth().currentUser;
