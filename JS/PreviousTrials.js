@@ -8,7 +8,6 @@ function loadtrial(){
 	var phase=document.getElementById("phases");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	console.log(user);
 	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Completed").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
@@ -16,9 +15,9 @@ function loadtrial(){
 			i=data1.id;
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
-			btn.setAttribute('data-id',""+i);
+			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',"displayinfo("+i+")");
+			btn.setAttribute('onclick',"displayinfo('"+i+"')");
 			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
