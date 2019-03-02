@@ -41,7 +41,7 @@
 				<tr><th>status :</th><td><input required class="w3-input" type="textbor" id="Status" name="p1"></td></tr>
 
 		</table>
-		</div> -->
+		</div> 
 		<div class="w3-center">
 		<button style="margin-top: 10px;margin-bottom: 10px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="Addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
 	</div>
