@@ -35,8 +35,8 @@
 		 <div id="Phase_details">
 			<table>
 				<tr><th colspan="2">Phase 1 Details</th></tr>
-				<tr><th>Starting Trial Date:</th><td><input required class="w3-input" type="textbox" id="Starting_Date" name="s1"></td></tr>
-				<tr><th>Ending Trial Date:</th><td><input required class="w3-input" type="textbox" id="Ending_Date" name="e1"></td></tr>
+				<tr><th>Starting Trial Date:</th><td><input required class="w3-input" type="Date" id="Starting_Date" name="s1"></td></tr>
+				<tr><th>Ending Trial Date:</th><td><input required class="w3-input" type="Date" id="Ending_Date" name="e1"></td></tr>
 				<tr><th>No. of Patients :</th><td><input required class="w3-input" type="textbor" id="No. of Patients" name="p1"></td></tr>
 				<tr><th>status :</th><td><input required class="w3-input" type="textbor" id="Status" name="p1"></td></tr>
 
