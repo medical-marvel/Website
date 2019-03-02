@@ -39,8 +39,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     if(user != null){
       var email_id = user.email;
-      console.log("Welcome User : " + email_id);
-      console.log(user.uid);
     }
   } else {
     // No user is signed in.
