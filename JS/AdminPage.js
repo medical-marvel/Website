@@ -1,3 +1,5 @@
+
+/*Hospital Section*/
 function load(){
 	setTimeout(loadtrial, 2000);
 }
@@ -12,12 +14,14 @@ function loadtrial(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
+			but=data1.data();
+			Doctor_name=but["Name"];
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
 			btn.setAttribute('onclick',"displayinfo('"+i+"')");
-			var t = document.createTextNode(i);  
+			var t = document.createTextNode(Doctor_name);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
 			div.appendChild(a);
@@ -67,3 +71,7 @@ function displayinfo(id)
 		info.appendChild(div);
 	});
 }
+
+
+/*Lab Se
+\ction*/
