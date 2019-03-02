@@ -4,7 +4,8 @@ require_once 'Header.php';
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/LabMain.css">
-
+<script type="text/javascript">
+</script>
 </head>
 <body>
 	<!-- Header section -->

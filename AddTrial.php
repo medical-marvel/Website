@@ -3,7 +3,6 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/AddTrial.css">
-	<link rel="stylesheet" type="text/css" href="css/Home.css">
 	<script src="JS/AddTrial.js">
 		function myfunction(){
 			alert("If you dont provide insurance, your Medical Trial will be least Recommended.");
@@ -19,7 +18,7 @@
 			<table>
 
 				<tr><th>Medicine Name </th><td><input required class="w3-input" type="textbox" id="Medicine_name" name="m1"></td></tr>
-				<!-- <tr><th>Phase status</th><td><input required class="w3-input" type="textbox" id="Phase_status" name="p1"></td></tr> -->
+				 <tr><th>Status</th><td><input required class="w3-input" type="textbox" id="Status" name="p1"></td></tr> 
 				<tr><th>Purpose</th><td><input required class="w3-input" type="textbox" id="Purpose" name="p1"></td></tr>
 				<!-- <tr><th>Specific Treatments</th><td><textarea id="Specific_treatment" maxlength="1000" rows="2" cols="10"></textarea></td></tr> -->
 				<tr><th>Age Group Required</th><td><input type="text" name="age" id="age"><label style="color: rgba(0,0,0,0.4);">(0:child,1:adult,2:old)</label></td></tr>
@@ -33,7 +32,7 @@
 			</table>
 		</div>
 
-		<!-- <div id="Phase_details">
+		 <div id="Phase_details">
 			<table>
 				<tr><th colspan="2">Phase 1 Details</th></tr>
 				<tr><th>Starting Trial Date:</th><td><input required class="w3-input" type="textbox" id="Starting_Date" name="s1"></td></tr>
@@ -42,9 +41,9 @@
 				<tr><th>status :</th><td><input required class="w3-input" type="textbor" id="Status" name="p1"></td></tr>
 
 		</table>
-		</div> -->
+		</div> 
 		<div class="w3-center">
-		<button style="margin-bottom: 20px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="Addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
+		<button style="margin-top: 10px;margin-bottom: 10px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="Addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
 	</div>
 	</div>
 </body>
