@@ -9,7 +9,7 @@ function loadtrial(){
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	console.log(user);
-	var datastored=database.collection("Lab/"+user.uid+"/Trial").get()
+	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Completed").get()
 	.then(function(data){
 		var size=data.size;
 		console.log(size);
