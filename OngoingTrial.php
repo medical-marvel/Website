@@ -9,26 +9,30 @@
 	</script>
 	<style type="text/css">
 		label{
-			font-size: 30px;
+			font-size: 20px;
+			padding: 10px;
 		}
+		
 	</style>
 </head>
 <body>
 	<h1 style="font-size: 40px;"><center><u>Ongoing Details</u></center></h1>
-	<div class="w3-container" style="display:inline-flex;">
-		<div class="w3-panel w3-card  " style="width:500px;height: 350px;margin-left:70px;border-radius: 10px;border: 10px solid #ffffcc;background-color: #34495e;color:white; " >
-			<label id="Phase">Phase</label><br>
-			<label id="StartingDate">Starting Date</label><br>
-			<label id="Ending_Date">Ending Date</label><br>
-			<label id="No.ofpatient">No.of Patient</label><br>
-			<button><a href="FeedBack.php">View FeedBack</a></button>
+	<div class="w3-container" >
+		<div class="w3-panel w3-card  try" style="margin-left:70px;border-radius: 10px;background-color: #34495e;color:white;display:inline-block;float:left;" >
+			<label id="Phase">Phase:</label><br>
+			<label id="Status">Status:</label><br>
+			<label id="StartingDate">Starting Date:</label><br>
+			<label id="Ending_Date">Ending Date:</label><br>
+			<label id="No.ofpatient">No.of Patients:</label><br>
+			<button class="w3-button w3-blue w3-hover-white"><a href="FeedBack.php">View FeedBack:</a></button>
 		</div>
-		<div class="w3-panel w3-card  " style="width:500px;height: 350px;margin-left:70px;border-radius: 10px;border: 10px solid #ffffcc;background-color: #34495e;color:white; " >
-			<label id="Phase">Phase</label><br>
-			<label id="StartingDate">Starting Date</label><br>
-			<label id="Ending_Date">Ending Date</label><br>
-			<label id="No.ofpatient">No.of Patient</label><br>
-			<button onclick="document.getElementById('id01').style.display='block'">Completed Phase</button>
+		<div class="w3-panel w3-card  " style="margin-left:70px;border-radius: 10px;background-color: #34495e;color:white;display:inline-block;float:left;">
+			<label id="Phase">Phase:</label><br>
+			<label id="Status">Status:</label><br> 	
+			<label id="StartingDate">Starting Date:</label><br>
+			<label id="Ending_Date">Ending Date:</label><br>
+			<label id="No.ofpatient">No.of Patients:</label><br>
+			<button class="w3-button w3-blue w3-hover-whiteonclick" onclick="document.getElementById('id01').style.display='block'">Complete Phase</button>
 		</div>
 
 	</div>
