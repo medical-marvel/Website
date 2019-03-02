@@ -8,7 +8,10 @@ require_once 'Header.php';
 	<link rel="stylesheet" href="CSS/PreviousTrials.css"> 
 </head>
 <body onload="load()">
-	<div id="trialbar" class="w3-card-4">
+	<div id="trialnav" class="w3-card-4">
+		<select id="trialbar" onchange="displayinfo()">
+  <option value="volvo" disabled>Select Trial
+</select>
 </div>
 <div class=" w3-card-4" id="trialinfo" >
 </div>

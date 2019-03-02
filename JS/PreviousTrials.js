@@ -4,8 +4,9 @@ function load(){
 function loadtrial(){
 
 	var i=1;
+	/*
+	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar");
-	var phase=document.getElementById("phases");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Completed").get()
@@ -13,6 +14,7 @@ function loadtrial(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
+			console.log(i);/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
@@ -21,16 +23,20 @@ function loadtrial(){
 			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
-			div.appendChild(a);
-			i++;
-			
+			div.appendChild(a);*/
+			var optn= document.createElement("option");
+			optn.setAttribute("data-id",i);
+			optn.setAttribute("value",i); 
+			optn.textContent=i;
+			info.appendChild(optn);
 		});
-		info.appendChild(div);
+		
 		
 	});
 }
-function displayinfo(id)
+function displayinfo()
 {
+	var id=document.getElementById("trialbar").value;
 	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
