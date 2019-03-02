@@ -29,7 +29,8 @@
 				},
 				{
 					type: "line",
-					dataPoints: [
+					dataPoints:
+					[
 					{label: "Insomnia", y: 20},
 					{label: "Nausea", y: 5},
 					{label: "Constipation",y: 12},
@@ -37,6 +38,21 @@
 					{label: "Anxiety", y: 35},
 					{label: "Head ache", y: 25},
 					{label: "Stomach ache", y: 30},
+					{label: "XYZ", y: 17},
+					{label: "ABC", y: 24}
+					]
+				},
+				{
+					type: "line",
+					dataPoints:
+					[
+					{label: "Insomnia", y: 10},
+					{label: "Nausea", y: 2},
+					{label: "Constipation",y: 11},
+					{label: "Diarrhea", y: 19},
+					{label: "Anxiety", y: 15},
+					{label: "Head ache", y: 35},
+					{label: "Stomach ache", y: 3},
 					{label: "XYZ", y: 17},
 					{label: "ABC", y: 24}
 					]
