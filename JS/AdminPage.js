@@ -1,14 +1,15 @@
-
-/*Hospital Section*/
 function load(){
 	setTimeout(loadtrial, 1000);
 	setTimeout(loadtrial1,1000);
 	setTimeout(loadtrial2,1000);
 	setTimeout(loadtrial3,1000);
 }
+/*Doctor*/
 function loadtrial(){
 
 	var i=1;
+	/*
+	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
@@ -17,29 +18,32 @@ function loadtrial(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			but=data1.data();
-			Doctor_name=but["Name"];
+			console.log(i);/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
 			btn.setAttribute('onclick',"displayinfo('"+i+"')");
-			var t = document.createTextNode(Doctor_name);  
+			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
-			div.appendChild(a);
-			i++;
-			
+			div.appendChild(a);*/
+			var optn= document.createElement("option");
+			optn.setAttribute("data-id",i);
+			optn.setAttribute("value",i); 
+			optn.textContent=i;
+			info.appendChild(optn);
 		});
-		info.appendChild(div);
+		
 		
 	});
 }
-function displayinfo(id)
+function displayinfo()
 {
-	var exist=$("#div-"+id);
+	var id=document.getElementById("trialbar").value;
 	$("#trialinfo").html('');
-	document.getElementById("try").style.display='block';
+	document.getElementById("try").style.display="block";
+	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
 	}
@@ -50,11 +54,11 @@ function displayinfo(id)
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
+	header.textContent=id;
+	div.appendChild(header);
 	var datastored=database.doc("Doctor/"+(id)).get()
 	.then((snapshot) => {
 		data=snapshot.data();
-	header.textContent=data.Name;
-	div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){		
@@ -75,11 +79,12 @@ function displayinfo(id)
 	});
 }
 
-
-/*Lab Section*/
+/*Lab*/
 function loadtrial1(){
 
 	var i=1;
+	/*
+	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar1");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
@@ -88,29 +93,32 @@ function loadtrial1(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			but=data1.data();
-			Lab_name=but["Name"];
+			console.log(i);/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',"displayinfo1('"+i+"')");
-			var t = document.createTextNode(Lab_name);  
+			btn.setAttribute('onclick',"displayinfo('"+i+"')");
+			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
-			div.appendChild(a);
-			i++;
-			
+			div.appendChild(a);*/
+			var optn= document.createElement("option");
+			optn.setAttribute("data-id",i);
+			optn.setAttribute("value",i); 
+			optn.textContent=i;
+			info.appendChild(optn);
 		});
-		info.appendChild(div);
+		
 		
 	});
 }
-function displayinfo1(id)
+function displayinfo1()
 {
-	var exist=$("#div-"+id);
+	var id=document.getElementById("trialbar1").value;
 	$("#trialinfo1").html('');
-	document.getElementById("try1").style.display='block';
+	document.getElementById("try1").style.display="block";
+	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
 	}
@@ -121,11 +129,11 @@ function displayinfo1(id)
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
+	header.textContent=id;
+	div.appendChild(header);
 	var datastored=database.doc("Lab/"+(id)).get()
 	.then((snapshot) => {
 		data=snapshot.data();
-	header.textContent=data.Name;
-	div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){		
@@ -145,12 +153,12 @@ function displayinfo1(id)
 		info.appendChild(div);
 	});
 }
-
-/*Patient Section*/
-
+/*Patient*/
 function loadtrial2(){
 
 	var i=1;
+	/*
+	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar2");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
@@ -159,29 +167,32 @@ function loadtrial2(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			but=data1.data();
-			Patient_name=but["Full Name"];
+			console.log(i);/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',"displayinfo2('"+i+"')");
-			var t = document.createTextNode(Patient_name);  
+			btn.setAttribute('onclick',"displayinfo('"+i+"')");
+			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
-			div.appendChild(a);
-			i++;
-			
+			div.appendChild(a);*/
+			var optn= document.createElement("option");
+			optn.setAttribute("data-id",i);
+			optn.setAttribute("value",i); 
+			optn.textContent=i;
+			info.appendChild(optn);
 		});
-		info.appendChild(div);
+		
 		
 	});
 }
-function displayinfo2(id)
+function displayinfo2()
 {
-	var exist=$("#div-"+id);
+	var id=document.getElementById("trialbar2").value;
 	$("#trialinfo2").html('');
-	document.getElementById("try2").style.display='block';
+	document.getElementById("try2").style.display="block";
+	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
 	}
@@ -192,11 +203,11 @@ function displayinfo2(id)
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
+	header.textContent=id;
+	div.appendChild(header);
 	var datastored=database.doc("Patient/"+(id)).get()
 	.then((snapshot) => {
 		data=snapshot.data();
-	/*header.textContent=data.Full Name;*/
-	div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){		
@@ -216,13 +227,13 @@ function displayinfo2(id)
 		info.appendChild(div);
 	});
 }
-
-/*Trial details*/
+/*Trial*/
 function loadtrial3(){
 
 	var i=1;
+	/*
+	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar3");
-	var phase=document.getElementById("phases");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Ongoing").get()
@@ -230,25 +241,32 @@ function loadtrial3(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
+			console.log(i);/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',"displayinfo3('"+i+"')");
+			btn.setAttribute('onclick',"displayinfo('"+i+"')");
 			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
-			div.appendChild(a);
-			i++;
-			
+			div.appendChild(a);*/
+			var optn= document.createElement("option");
+			optn.setAttribute("data-id",i);
+			optn.setAttribute("value",i); 
+			optn.textContent=i;
+			info.appendChild(optn);
 		});
-		info.appendChild(div);
+		
 		
 	});
 }
-function displayinfo3(id)
+function displayinfo3()
 {
+	var id=document.getElementById("trialbar3").value;
 	var exist=$("#div-"+id);
+	$("#trialinfo3").html('');
+	document.getElementById("try3").style.display="block";
 	if(exist.length!=0){
 		return;
 	}
