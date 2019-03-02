@@ -27,7 +27,7 @@ require_once 'Header.php';
 				</a>
 			</li>
 			<li>
-				<a href="OngoingTrial.php">
+				<a href="OngoingTrials.php">
 					<div class="box">ONGOING TRIAL
 					</div>
 				</a>
