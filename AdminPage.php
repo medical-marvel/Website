@@ -4,17 +4,21 @@ require_once 'Header.php';
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- <link rel="stylesheet" href="PreviousTrials.css"> -->
 	<title>Administrator Page</title>
-	<style type="text/css" href="AdminPage.css">
-</style>
+	<link rel="stylesheet" href="CSS/AdminPage.css"> 
 <script src="JS/AdminPage.js"></script>
 </head>
 <body onload="load()">
 	<h1 class="w3-header">Regulatory Authority</h1>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Doctors</h1>
-		<div id="trialbar"></div>
-		<div  id="trialinfo"> 
+		<div id="trialnav">
+		<select class="Yes" id="trialbar" onchange="displayinfo()">
+  		<option value="volvo" disabled>Select Trial
+		</select>
+		</div>
+		<div  class="No" id="trialinfo"> 
 			
 		</div>
 		<div class="w3-section" id="try" style="display:none;">
@@ -43,8 +47,12 @@ require_once 'Header.php';
 	</div>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Labs</h1>
-		<div id="trialbar1"></div>
-		<div  id="trialinfo1"> 
+		<div id="trialnav">
+		<select class="Yes" id="trialbar1" onchange="displayinfo1()">
+  		<option value="volvo" disabled>Select Trial
+		</select>
+		</div>
+		<div  class="No" id="trialinfo1"> 
 			
 		</div>
 		<div class="w3-section" id="try1" style="display:none;">
@@ -54,8 +62,12 @@ require_once 'Header.php';
 	</div>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Patient</h1>
-		<div id="trialbar2"></div>
-		<div  id="trialinfo2"> 
+		<div id="trialnav">
+		<select class="Yes" id="trialbar2" onchange="displayinfo2()">
+  		<option value="volvo" disabled>Select Trial
+		</select>
+		</div>
+		<div class="No" id="trialinfo2"> 
 			
 		</div>
 		<div class="w3-section" id="try2" style="display:none;">
@@ -65,8 +77,12 @@ require_once 'Header.php';
 	</div>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Trials</h1>
-		<div id="trialbar3"></div>
-		<div  id="trialinfo3"> 
+		<div id="trialnav">
+		<select class="Yes" id="trialbar3" onchange="displayinfo3()">
+  		<option value="volvo" disabled>Select Trial
+		</select>
+		</div>
+		<div class="No" id="trialinfo3"> 
 			
 		</div>
 		<div class="w3-section" id="try3" style="display:none;">
