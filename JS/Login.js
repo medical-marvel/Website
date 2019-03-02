@@ -16,7 +16,9 @@ for (var i = 0; i < inputs.length; i++) {
   firebase.auth().signInWithEmailAndPassword(userEmail, userPass)
     .then(function(user){
        var user = firebase.auth().currentUser;
-       window.location.href= 'LabMain.php';
+       console.log(user.displayName);
+       var data=user.displayName;
+       window.location.href= data+'Main.php';
     })
     .catch(function(error) {
     // Handle Errors here.

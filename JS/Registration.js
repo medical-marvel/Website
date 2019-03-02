@@ -30,7 +30,15 @@ function Register(str){
 			.then(function(user) {
 				firebase.auth().signInWithEmailAndPassword(email, password)
 				.then(function(user){
-					var user = firebase.auth().currentUser;
+					var user = firebase.auth().currentUser.then(function(){
+						
+					user.updateProfile({
+				displayName: str
+					});
+			}).then(function(){
+				console.log("done");
+        }).then(function () {
+            console.log("Updated");
 					console.log(user);
 					
 					//add user to database
