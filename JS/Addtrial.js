@@ -53,7 +53,7 @@ function writeUserData(user,trialdata,phasedata) {
 			console.log(phasedata);
 			database.doc("Lab/"+user.uid+"/Trial/Trial_"+i+"/Phase/Phase_1").set(phasedata).then(function() {
 				console.log("Document successfully written!")});
-			window.location.href("LabMain.php");
+				 window.location.href=("LabMain.php");
 		});
 
 

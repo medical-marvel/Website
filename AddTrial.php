@@ -32,7 +32,7 @@
 			</table>
 		</div>
 
-		<!-- <div id="Phase_details">
+		 <div id="Phase_details">
 			<table>
 				<tr><th colspan="2">Phase 1 Details</th></tr>
 				<tr><th>Starting Trial Date:</th><td><input required class="w3-input" type="textbox" id="Starting_Date" name="s1"></td></tr>
