@@ -11,14 +11,16 @@ require_once 'Header.php';
 			width: 100%;
 		}
 	</style>
+	<script src="AdminPage.js"></script>
 </head>
-<body>
+<body onload="load()">
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Hospitals</h1>
-		<div class="w3-card w3-white" style="width: 300px;padding: 8px;margin: 8px;float: left;">
+		<div class="w3-card w3-white" id="trialinfo" style="width: 300px;padding: 8px;margin: 8px;float: left;display:inline-block;float:left;">
 			<h3>Name: </h3>
 			<label>Unique Identification Number: </label>
-			<div class="w3-section w3-center">
+			<div class="w3-section w3-center
+			">
 				<button class="w3-button w3-green">Accept</button>
 				<button class="w3-button w3-red" onclick="document.getElementById('DeclineReason').style.display='block'">Decline</button>
 			</div>
