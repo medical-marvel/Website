@@ -31,29 +31,25 @@ function loadtrial(){
 }
 function displayinfo(id)
 {
-	var exists=$(this).attr(id);
-	if(exists!=null){
+	var exist=$("#div-"+id);
+	if(exist.length!=0){
 		return;
 	}
 	var info=document.querySelector("#trialinfo");
 	var header = document.createElement("h4"); 
 	var div = document.createElement("div");
-	div.setAttribute("data-id","div-"+id);
+	div.setAttribute("data-id",id);
+	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	console.log(id);
 	header.textContent=id;
 	div.appendChild(header);
 	var datastored=database.doc("Lab/"+user.uid+"/Trial/"+(id)).get()
 	.then((snapshot) => {
-		console.log(snapshot.data());
 		data=snapshot.data();
-		console.log(data.status);
 		//creating html 
 		var ul = document.createElement("ul");
-		for(name in data){
-			console.log(name);
-			console.log(data[name]);
+		for(name in data){		
 			var li = document.createElement("li"); 
 			var p1 = document.createElement("label"); 
 			var p2 = document.createElement("label");
