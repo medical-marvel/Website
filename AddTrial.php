@@ -3,7 +3,6 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/AddTrial.css">
-	<link rel="stylesheet" type="text/css" href="css/Home.css">
 	<script src="JS/AddTrial.js">
 		function myfunction(){
 			alert("If you dont provide insurance, your Medical Trial will be least Recommended.");
@@ -44,7 +43,7 @@
 		</table>
 		</div> -->
 		<div class="w3-center">
-		<button style="margin-bottom: 20px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="Addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
+		<button style="margin-top: 10px;margin-bottom: 10px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="Addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
 	</div>
 	</div>
 </body>
