@@ -18,7 +18,7 @@
 			<table>
 
 				<tr><th>Medicine Name </th><td><input required class="w3-input" type="textbox" id="Medicine_name" name="m1"></td></tr>
-				<!-- <tr><th>Phase status</th><td><input required class="w3-input" type="textbox" id="Phase_status" name="p1"></td></tr> -->
+				 <tr><th>Status</th><td><input required class="w3-input" type="textbox" id="Status" name="p1"></td></tr> 
 				<tr><th>Purpose</th><td><input required class="w3-input" type="textbox" id="Purpose" name="p1"></td></tr>
 				<!-- <tr><th>Specific Treatments</th><td><textarea id="Specific_treatment" maxlength="1000" rows="2" cols="10"></textarea></td></tr> -->
 				<tr><th>Age Group Required</th><td><input type="text" name="age" id="age"><label style="color: rgba(0,0,0,0.4);">(0:child,1:adult,2:old)</label></td></tr>
