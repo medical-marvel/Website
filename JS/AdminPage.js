@@ -32,6 +32,7 @@ function displayinfo(id)
 {
 	var exist=$("#div-"+id);
 	$("#trialinfo").html('');
+	document.getElementById("try").style.display='block';
 	if(exist.length!=0){
 		return;
 	}
@@ -42,11 +43,11 @@ function displayinfo(id)
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	header.textContent=id;
-	div.appendChild(header);
 	var datastored=database.doc("Doctor/"+(id)).get()
 	.then((snapshot) => {
 		data=snapshot.data();
+	header.textContent=data.Name;
+	div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){		

@@ -10,13 +10,14 @@ require_once 'Header.php';
 <script src="JS/AdminPage.js"></script>
 </head>
 <body onload="load()">
+	<h1 class="w3-header">Regulatory Authority</h1>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Hospitals</h1>
 		<div id="trialbar" class="w3-card-4"></div>
-		<div class="w3-card w3-white" id="trialinfo"> 
+		<div  id="trialinfo"> 
 			
 		</div>
-		<div class="w3-section">
+		<div class="w3-section" id="try" style="display:none;">
 				<button class="w3-button w3-green">Accept</button>
 				<button class="w3-button w3-red" onclick="document.getElementById('DeclineReason').style.display='block'">Decline</button> 
 			</div>
