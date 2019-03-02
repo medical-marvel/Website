@@ -5,26 +5,22 @@ require_once 'Header.php';
 <html>
 <head>
 	<title>Administrator Page</title>
-	<style type="text/css">
-		.w3-dropdown-hover .w3-button
-		{
-			width: 100%;
-		}
-	</style>
-	<script src="AdminPage.js"></script>
+	<style type="text/css" href="AdminPage.css">
+</style>
+<script src="JS/AdminPage.js"></script>
 </head>
 <body onload="load()">
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Hospitals</h1>
-		<div class="w3-card w3-white" id="trialinfo" style="width: 300px;padding: 8px;margin: 8px;float: left;display:inline-block;float:left;">
-			<h3>Name: </h3>
-			<label>Unique Identification Number: </label>
-			<div class="w3-section w3-center
-			">
-				<button class="w3-button w3-green">Accept</button>
-				<button class="w3-button w3-red" onclick="document.getElementById('DeclineReason').style.display='block'">Decline</button>
-			</div>
+		<div id="trialbar" class="w3-card-4"></div>
+		<div class="w3-card w3-white" id="trialinfo"> 
+			
 		</div>
+		<div class="w3-section">
+				<button class="w3-button w3-green">Accept</button>
+				<button class="w3-button w3-red" onclick="document.getElementById('DeclineReason').style.display='block'">Decline</button> 
+			</div>
+
 		<div id="DeclineReason" class="w3-modal">
 			<div class="w3-modal-content w3-card-4 w3-white">
 				<header class="w3-container w3-grey"> 
@@ -44,7 +40,7 @@ require_once 'Header.php';
 			</div>
 		</div>
 	</div>
-	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
+	<!-- <div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Labs</h1>
 		<div class="w3-card w3-white" style="width: 300px;padding: 8px;margin: 8px;float: left;">
 			<h3>Name: </h3>
@@ -77,5 +73,5 @@ require_once 'Header.php';
 			</div>
 		</div>
 	</div>
-</body>
+--></body>
 </html>
