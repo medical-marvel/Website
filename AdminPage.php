@@ -53,5 +53,27 @@ require_once 'Header.php';
 			</div>
 		</div>
 	</div>
+	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
+		<h1>Doctor</h1>
+		<div class="w3-card w3-white" style="width: 300px;padding: 8px;margin: 8px;float: left;">
+			<h3>Name: </h3>
+			<label>Unique Identification Number: </label>
+			<div class="w3-section w3-center">
+				<button class="w3-button w3-green">Accept</button>
+				<button class="w3-button w3-red">Decline</button>
+			</div>
+		</div>
+	</div>
+	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
+		<h1>Patient</h1>
+		<div class="w3-card w3-white" style="width: 300px;padding: 8px;margin: 8px;float: left;">
+			<h3>Name: </h3>
+			<label>Unique Identification Number: </label>
+			<div class="w3-section w3-center">
+				<button class="w3-button w3-green">Accept</button>
+				<button class="w3-button w3-red">Decline</button>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
