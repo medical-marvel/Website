@@ -37,7 +37,7 @@
 	cursor: pointer;
 	border-radius: 10px;
 	transition: 0.3s ease-in-out;
-	background:linear-gradient(rgba(0,0,0,0.50),rgba(0,0,0,0.10));
+	background:linear-gradient(#134bb1,#1a64ec);
 	background-size: cover;
 	text-align: middle;
 	vertical-align: middle;
