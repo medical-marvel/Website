@@ -18,7 +18,7 @@
 <body>
 	<h1 style="font-size: 40px;"><center><u>Ongoing Details</u></center></h1>
 	<div class="w3-container" >
-		<div class="w3-panel w3-card  try" style="margin-left:70px;border-radius: 10px;background-color: #34495e;color:white;display:inline-block;float:left;" >
+		<div class="w3-panel w3-card  try" style="margin-left:70px;border-radius: 10px;background-color: #34495e;color:white;display:inline-block;float:left;">
 			<label id="Phase">Phase:</label><br>
 			<label id="Status">Status:</label><br>
 			<label id="StartingDate">Starting Date:</label><br>

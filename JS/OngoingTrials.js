@@ -4,10 +4,10 @@ function load(){
 function loadtrial(){
 
 	var i=1;
-	var info=document.querySelector("#trialbar");
+	var info=document.querySelector("#container");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Completed").get()
+	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Ongoing").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
@@ -34,7 +34,7 @@ function displayinfo(id)
 	if(exist.length!=0){
 		return;
 	}
-	var info=document.querySelector("#trialinfo");
+	var info=document.querySelector("#phases");
 	var header = document.createElement("h4"); 
 	var div = document.createElement("div");
 	div.setAttribute("data-id",id);
