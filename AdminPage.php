@@ -41,18 +41,18 @@ require_once 'Header.php';
 			</div>
 		</div>
 	</div>
-	<!-- <div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
-		<h1>Labs</h1>
-		<div class="w3-card w3-white" style="width: 300px;padding: 8px;margin: 8px;float: left;">
-			<h3>Name: </h3>
-			<label>Unique Identification Number: </label>
-			<div class="w3-section w3-center">
-				<button class="w3-button w3-green">Accept</button>
-				<button class="w3-button w3-red">Decline</button>
-			</div>
-		</div>
-	</div>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
+		<h1>Hospitals</h1>
+		<div id="trialbar1" class="w3-card-4"></div>
+		<div  id="trialinfo1"> 
+			
+		</div>
+		<div class="w3-section" id="try1" style="display:none;">
+				<button class="w3-button w3-green">Accept</button>
+				<button class="w3-button w3-red" onclick="document.getElementById('DeclineReason').style.display='block'">Decline</button> 
+			</div>
+	</div>
+	<!-- <div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Doctor</h1>
 		<div class="w3-card w3-white" style="width: 300px;padding: 8px;margin: 8px;float: left;">
 			<h3>Name: </h3>
@@ -73,6 +73,6 @@ require_once 'Header.php';
 				<button class="w3-button w3-red">Decline</button>
 			</div>
 		</div>
-	</div>
+	</div> -->
 --></body>
 </html>
