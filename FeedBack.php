@@ -31,9 +31,9 @@
 			<li><b>OverAll Condition</b> <select><option>Stable</option><option>Not stable</option></select><br></li>
 			<li><b>Are you happy with our service:</b><label>Yes</label></li>
 			<li><b>Problem Faced physically by you while consuming medicine?If yes elloborate here</b><br>
-			<textarea rows="2" column="50">Write here.....</textarea><br></li>
+			<textarea rows="2" column="50"placeholder="Write here.."></textarea><br></li>
 			<li><b>Any Suggestions regarding our Services?</b><br>
-			<textarea rows="2" column="50">Write here.....</textarea></li>
+			<textarea rows="2" column="50" placeholder="Write here.."></textarea></li>
 		</div>
   		<div class="w3-panel w3-card-2  try" style="width:350px;height: 400px; margin-left:70px;border-radius: 10px;border: 10px solid #ffffcc;background-color: #34495e;color:white;"><p>w3-card-2</p></div>
   		<div class="w3-panel w3-card-2  try" style="width:350px;height: 400px; margin-left:70px;border-radius: 10px;border: 10px solid #ffffcc;background-color: #34495e;color:white;"><p>w3-card-2</p></div>
