@@ -26,6 +26,20 @@ window.onload = function () {
 				{ label: "XYZ",  y: 19  },
 				{ label: "ABC",  y: 20  }
 			]
+		},
+		{
+			type:"line",
+			dataPoints: [
+				{ label: "Insomnia",  y: 13  },
+				{ label: "Nausea", y: 15  },
+				{ label: "Constipation", y: 20 },
+				{ label: "Diarrhea",  y: 39  },
+				{ label: "Anxiety",  y: 29  },
+				{ label: "Head ache",  y: 45  },
+				{ label: "Stomach ache",  y: 37  },
+				{ label: "XYZ",  y: 18 },
+				{ label: "ABC",  y: 20  }
+			]
 		}
 		]
 	});
