@@ -31,9 +31,11 @@ function loadtrial(){
 function displayinfo(id)
 {
 	var exist=$("#div-"+id);
+	$("#phases").html('');
 	if(exist.length!=0){
 		return;
 	}
+
 	var info=document.querySelector("#phases");
 	var header = document.createElement("h4"); 
 	var div = document.createElement("div");
@@ -63,5 +65,43 @@ function displayinfo(id)
 		}
 		div.appendChild(ul);
 		info.appendChild(div);
+		var datastored=database.collection("Lab/"+user.uid+"/Trial/"+(id)+"/Phase").get()
+		.then(phase =>{
+	phase.forEach((snapshot) => {
+		data=snapshot.data();
+		id=snapshot.id;
+		var info=document.querySelector("#phases");
+	var header = document.createElement("h4"); 
+	var div = document.createElement("div");
+	var btn=document.createElement("button");
+	btn.textContent="View Feedback";
+	btn.setAttribute("data-id",id);
+	div.setAttribute("data-id",id);
+	div.setAttribute("id","div-"+id);
+	header.textContent=id;
+
+	div.appendChild(header);
+		//creating html 
+		var ul = document.createElement("ul");
+		for(name in data){	
+
+			var li = document.createElement("li"); 
+			var p1 = document.createElement("label"); 
+			var p2 = document.createElement("label");
+			p1.setAttribute("data-style","float:left");
+			p2.setAttribute("data-style","float:left"); 
+			li.setAttribute("data-id",data[name]);
+			p1.textContent=name+"  :";
+			p2.textContent=data[name];
+			li.appendChild(p1);
+			li.appendChild(p2);
+			ul.appendChild(li);
+		}
+		div.appendChild(ul);
+		div.appendChild(btn);
+		info.appendChild(div);
+	});
+			
+		});
 	});
 }

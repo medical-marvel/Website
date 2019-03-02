@@ -5,6 +5,7 @@ function loadtrial(){
 
 	var i=1;
 	var info=document.querySelector("#trialbar");
+	var phase=document.getElementById("phases");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Completed").get()
