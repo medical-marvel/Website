@@ -1,5 +1,7 @@
 
 function Addtrial() {
+	var age = document.getElementById("age");
+	console.log(age);
 	var inputs = document.getElementsByTagName('input');
 	for (var i = 0; i < inputs.length; i++) {
 		if(!inputs[i].checkValidity())

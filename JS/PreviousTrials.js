@@ -1,5 +1,8 @@
-
+function load(){
+	 setTimeout(loadtrial, 2000);
+}
 function loadtrial(){
+
 	var i=1;
 	var info=document.querySelector("#trialbar");
 	var phase=document.getElementById("phases");

@@ -7,9 +7,8 @@ require_once 'Header.php';
 	<script src="JS/PreviousTrials.js"></script>
 	<link rel="stylesheet" href="CSS/PreviousTrials.css"> 
 </head>
-<body >
+<body onload="load()">
 	<div id="trialbar" class="w3-card-4">
-	<button style="float: left;" onclick="loadtrial()">clickme</button>
 </div>
 <div class=" w3-card-4" id="trialinfo" >
 </div>

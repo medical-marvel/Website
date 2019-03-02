@@ -39,3 +39,9 @@ input:focus
 {
 	border-bottom:1px solid black;
 }
+#Addtrial
+{
+	width: 100px;
+	padding: 3px 8px;
+	margin-left: 45%;
+}
