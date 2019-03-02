@@ -1,5 +1,5 @@
 function load(){
-	 setTimeout(loadtrial, 2000);
+	setTimeout(loadtrial, 2000);
 }
 function loadtrial(){
 
@@ -11,31 +11,35 @@ function loadtrial(){
 	console.log(user);
 	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Completed").get()
 	.then(function(data){
-		var size=data.size;
-		console.log(size);
 		var div = document.createElement("div"); 
-		while(i<=size)
-		{
+		data.forEach(data1 =>{
+			i=data1.id;
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
-			btn.setAttribute('data-id',"Trial_"+i);
+			btn.setAttribute('data-id',""+i);
 			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',"displayinfo('Trial_"+i+"')");
-			var t = document.createTextNode("Trial_"+i);  
+			btn.setAttribute('onclick',"displayinfo("+i+")");
+			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
 			div.appendChild(a);
 			i++;
-		}
-		info.appendChild(div); 
+			
+		});
+		info.appendChild(div);
+		
 	});
 }
 function displayinfo(id)
 {
+	var exists=$(this).attr(id);
+	if(exists!=null){
+		return;
+	}
 	var info=document.querySelector("#trialinfo");
 	var header = document.createElement("h4"); 
 	var div = document.createElement("div");
-	div.setAttribute("data-id",id);
+	div.setAttribute("data-id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	console.log(id);
