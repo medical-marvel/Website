@@ -1,5 +1,5 @@
 function Details(){
-	setTimeout(details(),2000);
+	setTimeout(details,2000);
 }
 function details()
 {
@@ -30,6 +30,7 @@ function details()
 					var a;
 					for(name in data1)
 					{
+						if(name!="date")
 						{
 							if(data1[name]=="yes")
 							{
