@@ -114,6 +114,10 @@ function displayinfo(id)
 function addphase(phaseid,id)
 {
 	var i=0;
+	if(phaseid>=4){
+		alert("4 trials are already completed");
+		window.location.href=("OngoingTrials.php");
+	}
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	var modal=document.getElementById("id01").getElementsByTagName('input');
