@@ -79,7 +79,7 @@ function displayinfo(id)
 				var div = document.createElement("div");
 				var btn=document.createElement("button");
 				var a=document.createElement("a");
-				a.setAttribute("href","ViewFeedback.php?t="+id+"&p="+phaseid);
+				a.setAttribute("href","ViewFeedback.php?t="+id+"+p="+phaseid);
 				btn.textContent="View Feedback";
 				btn.setAttribute("data-id",phaseid);
 				div.setAttribute("data-id",phaseid);
