@@ -5,20 +5,20 @@ function load(){
 	setTimeout(loadtrial3,1000);
 }
 /*Doctor*/
+var i;
 function loadtrial(){
-
-	var i=1;
-	/*
+	
+/*
 	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	var datastored=database.collection("Doctor").get()
+	var datastored=database.collection("Doctor").where("Status", "==", "Pending").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			console.log(data1);
+			console.log(i);
 			var but=data1.data().Name;
 			//var dname=but.Name;
 			console.log(but);
@@ -63,10 +63,9 @@ function displayinfo()
 	.then((snapshot) => {
 		data=snapshot.data();
 		var but=data.Name;
-			//var dname=but.Name;
 		header.textContent=but;
 		div.appendChild(header);
-		//creating html 
+		
 		var ul = document.createElement("ul");
 		for(name in data){		
 			var li = document.createElement("li"); 
@@ -85,6 +84,22 @@ function displayinfo()
 		info.appendChild(div);
 	});
 }
+
+function MyDoc(i)
+{
+	/*var user=document.getElementById("chase").value;{
+	"Status": "Approved",
+	}*/
+	var database = firebase.firestore();
+	console.log(i);
+	database.collection("Doctor/").doc(i+"/Status").update("Approved").then(function() {
+	console.log("Document successfully updated!");
+	});
+	
+		/*database.collection("Doctor").doc(i).update(
+   			{ "Status": "Approved"}
+			);*/
+	}
 
 /*Lab*/
 function loadtrial1(){
