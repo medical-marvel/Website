@@ -100,11 +100,17 @@ function loadtrial1(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
+<<<<<<< HEAD
 			console.log(i);
 			var but=data1.data().Name;
 			//var dname=but.Name;
 			console.log(but);
 			/*var a = document.createElement("a"); 
+=======
+			header=data1.data()
+			console.log(header["Name"]);/*
+			var a = document.createElement("a"); 
+>>>>>>> 69efc1f7b9477168450f91d48864237e9dfca5c4
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
