@@ -5,20 +5,15 @@ require_once 'Header.php';
 <html>
 <head>
 	<title>TrialRequests</title>
-	<script src="JS/TrialRequests.js"></script>
+	
 	<link rel="stylesheet" href="CSS/TrialRequests.css"> 
+	<script src="JS/TrialRequests.js"></script>
 </head>
-<body onload="load()">
-	<div id="trialnav" class="w3-card-4">
-		<select id="trialbar" onchange="displayinfo()">
-			<option value="volvo" disabled>Select Trial</option>
-		</select>
-	</div>
-	<div class=" w3-card-4" id="trialinfo" >
-	</div>
-	<div class="w3-section" id="try" style="display:none;">
-		<button class="w3-button w3-green" onclick="myfunction()">Accept</button>
-		<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
-	</div> 
+<body >
+	<div id="container">
+<div class=" w3-card-4" id="applications">
+</div> 
+</div>
 </body>
+<script type="text/javascript">load()</script>
 </html>
