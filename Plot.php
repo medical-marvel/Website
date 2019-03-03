@@ -13,7 +13,7 @@
 				animationEnabled:true,
 				data: [
 				{
-					type: "line",
+					type: "column",
 					dataPoints:
 					[
 					{label: "Insomnia", y: 10},
@@ -28,7 +28,7 @@
 					]
 				},
 				{
-					type: "line",
+					type: "column",
 					dataPoints:
 					[
 					{label: "Insomnia", y: 20},
@@ -43,7 +43,7 @@
 					]
 				},
 				{
-					type: "line",
+					type: "column",
 					dataPoints:
 					[
 					{label: "Insomnia", y: 10},
