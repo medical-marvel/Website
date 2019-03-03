@@ -1,8 +1,20 @@
-.Yes
+
+
+/*#trialinfo div
+{
+width: 300px;padding: 8px;margin: 8px;float: left;display:inline-block;float:left;
+}
+
+	.w3-dropdown-hover .w3-button
+	{
+		width: 100%;
+	}*/
+
+#yes
 {
 	background-color: #1a64ec;
 }
-.Yes button
+#yes button
 {
 	margin: 10px;
 	padding: 2px 8px;
@@ -10,7 +22,7 @@
 	background-color: #134bb1;
 	color: #fff8f5;
 }
-.No div
+#no div
 {
 	display: inline-block;
 	margin: 10px;

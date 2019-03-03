@@ -5,7 +5,7 @@ function load(){
 	setTimeout(loadtrial3,1000);
 }
 /*Doctor*/
-var i;
+var i=1;
 function loadtrial(){
 	
 /*
@@ -22,16 +22,7 @@ function loadtrial(){
 			var but=data1.data().Name;
 			//var dname=but.Name;
 			console.log(but);
-			/*
-			var a = document.createElement("a"); 
-			var btn = document.createElement("BUTTON");  
-			btn.setAttribute('data-id',i);
-			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',"displayinfo('"+i+"')");
-			var t = document.createTextNode(i);  
-			btn.appendChild(t);
-			a.appendChild(btn);                                // Append the text to <button>
-			div.appendChild(a);*/
+
 			var optn= document.createElement("option");
 			optn.setAttribute("data-id",i);
 			optn.setAttribute("value",i); 
@@ -46,24 +37,29 @@ function displayinfo()
 {
 	var id=document.getElementById("trialbar").value;
 	$("#trialinfo").html('');
-	document.getElementById("try").style.display="block";
+	//document.getElementById("try").style.display="block";
 	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
 	}
 	var info=document.querySelector("#trialinfo");
 	var header = document.createElement("h4"); 
-	var div = document.createElement("div");
-	div.setAttribute("data-id",id);
-	div.setAttribute("id","div-"+id);
+	var div = document.createElement("div"); 
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	
-	var datastored=database.doc("Doctor/"+(id)).get()
+	var t=1;
+	var datastored=database.doc("Doctor/"+id).get()
 	.then((snapshot) => {
 		data=snapshot.data();
+		//id=data.id;
+		console.log(data.id);
+		var div = document.createElement("div");
+		div.setAttribute("data-id",id);
+		div.setAttribute("id","div-"+id);
 		var but=data.Name;
+		t=data.id;
 		header.textContent=but;
+		console.log(t);
 		div.appendChild(header);
 		
 		var ul = document.createElement("ul");
@@ -81,25 +77,34 @@ function displayinfo()
 			ul.appendChild(li);
 		}
 		div.appendChild(ul);
+
+		var btn = document.createElement("BUTTON");
+		btn.setAttribute('onclick',"function MyDoc("+snapshot.data().id+")");
+		div.appendChild(btn);
 		info.appendChild(div);
-	});
+
+		})
+
 }
 
-function MyDoc(i)
+
+
+function MyDoc(j)
 {
-	/*var user=document.getElementById("chase").value;{
-	"Status": "Approved",
-	}*/
+	//var user=document.getElementById("chase").value;
 	var database = firebase.firestore();
-	console.log(i);
-	database.collection("Doctor/").doc(i+"/Status").update("Approved").then(function() {
+	database.collection("Doctor/").doc(j).update({
+	Status: "Approved"
+	}).then(function() {
 	console.log("Document successfully updated!");
 	});
 	
 		/*database.collection("Doctor").doc(i).update(
    			{ "Status": "Approved"}
 			);*/
-	}
+
+}
+
 
 /*Lab*/
 function loadtrial1(){
@@ -149,7 +154,7 @@ function displayinfo1()
 	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
-	}
+	}//
 	var info=document.querySelector("#trialinfo1");
 	var header = document.createElement("h4"); 
 	var div = document.createElement("div");
@@ -221,7 +226,7 @@ function displayinfo2()
 {
 	var id=document.getElementById("trialbar2").value;
 	$("#trialinfo2").html('');
-	document.getElementById("try2").style.display="block";
+	//document.getElementById("try2").style.display="block";
 	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
