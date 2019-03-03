@@ -18,19 +18,20 @@ function loadtrial(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			console.log(i);/*
+			but=data1.data();
+			console.log(but['Name']);/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',"displayinfo('"+i+"')");
+			btn.setAttribute('onclick',1"displayinfo('"+i+"')");
 			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
 			div.appendChild(a);*/
 			var optn= document.createElement("option");
-			optn.setAttribute("data-id",i);
-			optn.setAttribute("value",i); 
+			optn.setAttribute("data-id",but);
+			optn.setAttribute("value",but); 
 			optn.textContent=i;
 			info.appendChild(optn);
 		});
@@ -54,11 +55,12 @@ function displayinfo()
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	header.textContent=id;
-	div.appendChild(header);
+	
 	var datastored=database.doc("Doctor/"+(id)).get()
 	.then((snapshot) => {
 		data=snapshot.data();
+		header.textContent=data["Name"];
+		div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){		
