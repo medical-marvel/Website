@@ -3,8 +3,8 @@ require_once 'Header.php';
 ?>
 <!DOCTYPE html>
 <head>
-	<script src="JS/Registration.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/Register.css">
+	<script src="JS/LabRegistration.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/LabRegistration.css">
 </head>
 <body style="background-color: #fff8f5; overflow: scroll;">
 	<h1 class="w3-center">Lab Registration</h1>

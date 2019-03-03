@@ -2,12 +2,12 @@
 function Register(str){
 	var database = firebase.firestore();
 	var inputs = document.getElementsByTagName('input');
-	var email= document.getElementById('Email Address').value;
-	var password= document.getElementById('Password').value;
-	var confirmpassword= document.getElementById('Confirm Password').value;
+	var email= document.getElementById('email_address').value;
+	var password= document.getElementById('password').value;
+	var confirmpassword= document.getElementById('confirm_password').value;
 	if(password!=confirmpassword)
 		{
-			alert("password and confirm password do not match");
+			alert("Password and Confirm Password do not match");
 			return;
 		}
 		for (var i = 0; i < inputs.length; i++) {
