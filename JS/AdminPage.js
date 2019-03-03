@@ -177,23 +177,24 @@ function displayinfo1()
 /*Trial*/
 
 function loadtrial3(){
-
 	var i=1;
 	/*
 	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar3");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Ongoing").get()
+	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Pending").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
+			console.log(i);
 			var optn= document.createElement("option");
 			optn.setAttribute("data-id",i);
 			optn.setAttribute("value",i); 
 			optn.textContent=i;
 			info.appendChild(optn);
+			i++;
 		});
 	});
 }
