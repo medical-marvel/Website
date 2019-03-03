@@ -67,24 +67,26 @@ function displayinfo(id)
 		info.appendChild(div);
 		var datastored=database.collection("Lab/"+user.uid+"/Trial/"+(id)+"/Phase").get()
 		.then(phase =>{
-	phase.forEach((snapshot) => {
-		data=snapshot.data();
-		id=snapshot.id;
-		var info=document.querySelector("#phases");
-	var header = document.createElement("h4"); 
-	var div = document.createElement("div");
-	var btn=document.createElement("button");
-	btn.textContent="View Feedback";
-	btn.setAttribute("data-id",id);
-	div.setAttribute("data-id",id);
-	div.setAttribute("id","div-"+id);
-	header.textContent=id;
-
-	div.appendChild(header);
+			var size=phase.size;
+			size=size+1;
+			var phasesize=phase.size;
+			console.log(size);
+			phase.forEach((snapshot) => {
+				data=snapshot.data();
+				phaseid=snapshot.id;
+				var info=document.querySelector("#phases");
+				var header = document.createElement("h4"); 
+				var div = document.createElement("div");
+				var btn=document.createElement("button");
+				btn.textContent="View Feedback";
+				btn.setAttribute("data-id",phaseid);
+				div.setAttribute("data-id",phaseid);
+				div.setAttribute("id","div-"+phaseid);
+				header.textContent=phaseid;
+				div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){	
-
 			var li = document.createElement("li"); 
 			var p1 = document.createElement("label"); 
 			var p2 = document.createElement("label");
@@ -99,9 +101,40 @@ function displayinfo(id)
 		}
 		div.appendChild(ul);
 		div.appendChild(btn);
+		console.log( size);
+		console.log( size);
+		var modal=document.getElementById("modalbutton").setAttribute("onclick","addphase('"+size+"','"+id+"')");
+
 		info.appendChild(div);
 	});
 			
 		});
+	});
+}
+function addphase(phaseid,id)
+{
+	var i=0;
+	if(phaseid>=4){
+		alert("4 trials are already completed");
+		window.location.href=("OngoingTrials.php");
+	}
+	var user = firebase.auth().currentUser;
+	var database = firebase.firestore();
+	var modal=document.getElementById("id01").getElementsByTagName('input');
+	var modaldata={};
+	while(i<modal.length)
+	{
+		modaldata[modal[i].id]=modal[i].value;
+		i++;
+	}
+	database.doc("Lab/"+user.uid+"/Trial/"+id+"/Phase/Phase_"+phaseid).set(modaldata).then(function() {
+		console.log("Document successfully written!");
+		phaseid-=1;
+		database.doc("Lab/"+user.uid+"/Trial/"+id+"/Phase/Phase_"+phaseid).update({
+			Status : "completed"
+		}).then(function(){
+					window.location.href=("OngoingTrials.php");
+				})
+
 	});
 }
