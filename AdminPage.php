@@ -10,8 +10,8 @@ require_once 'Header.php';
 <script src="JS/AdminPage.js"></script>
 </head>
 <body onload="load()">
-	<h1 class="w3-header">Regulatory Authority</h1>
-	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
+	<h1 class="w3-header"><center>Regulatory Authority</center></h1>
+	<div class="w3-container" style="margin: 16px;padding: 12px;background-color: #ffffcc">
 		<h1>Doctors</h1>
 		<div id="trialnav">
 		<select class="Yes" id="trialbar" onchange="displayinfo()">
@@ -60,7 +60,7 @@ require_once 'Header.php';
 				<button class="w3-button w3-red" onclick="document.getElementById('DeclineReason').style.display='block'">Decline</button> 
 			</div>
 	</div>
-	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
+	<div class="w3-container" style="margin: 16px;padding: 12px;background-color: #ffffcc">
 		<h1>Patient</h1>
 		<div id="trialnav">
 		<select class="Yes" id="trialbar2" onchange="displayinfo2()">
