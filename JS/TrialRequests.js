@@ -55,14 +55,3 @@ function myfunction()
 
 		})
 }
-function approve(id){
-
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
-	database.doc("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient/"+id).update({
-			Status : "Approved"
-		}).then(function(){
-				console.log("done");
-				document.getElementbyId("div"+id).css.style.display=none;
-				})
-}
