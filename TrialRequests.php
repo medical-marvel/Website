@@ -6,7 +6,7 @@ require_once 'Header.php';
 <head>
 	<title>TrialRequests</title>
 	<script src="JS/TrialRequests.js"></script>
-	<link rel="stylesheet" href="CSS/PreviousTrials.css"> 
+	<link rel="stylesheet" href="CSS/TrialRequests.css"> 
 </head>
 <body onload="load()">
 	<div id="trialnav" class="w3-card-4">
