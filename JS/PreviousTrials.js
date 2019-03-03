@@ -14,7 +14,7 @@ function loadtrial(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			console.log(i);/*
+			/*console.log(i);
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
@@ -30,8 +30,6 @@ function loadtrial(){
 			optn.textContent=i;
 			info.appendChild(optn);
 		});
-		
-		
 	});
 }
 function displayinfo()
