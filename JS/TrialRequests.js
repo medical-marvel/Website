@@ -17,11 +17,13 @@ function myfunction()
 			id=patient.id;
 
 
-	btn.setAttribute("onclick","approve('"+id+"')");
+	
 			var div = document.createElement("div"); 
 				var btn=document.createElement("button");
+				btn.setAttribute("onclick","approve('"+id+"')");
 			div.setAttribute("data-id",id);
 			div.setAttribute("id","div-"+id);
+			div.setAttribute("style","float: left;");
 			var header = document.createElement("h4");
 
 	header.textContent=id;
@@ -45,14 +47,11 @@ function myfunction()
 
 					}
 				})
-			
-			btn.textContent=id;
+
+			btn.textContent="Approve";
 	div.appendChild(btn);
 			info.appendChild(div);
 			});
 
 		})
-		
-
-
 }
