@@ -18,7 +18,7 @@ require_once 'Header.php';
 	</div>
 	<div class="w3-section" id="try" style="display:none;">
 		<button class="w3-button w3-green" onclick="myfunction()">Accept</button>
-		<button class="w3-button w3-red" onclick="document.getElementById('DeclineReason').style.display='block'">Decline</button> 
+		<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
 	</div> 
 </body>
 </html>

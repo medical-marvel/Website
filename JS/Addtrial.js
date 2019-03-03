@@ -12,11 +12,11 @@ function Addtrial() {
 	}
 	i=0;
 	//inputs of trial section
-	var trialinputs=document.getElementById('Trial_details').getElementsByTagName('input');
-	var trialtext=document.getElementById('Trial_details').getElementsByTagName('textarea');
+	var trialinputs=document.getElementById('trial_details').getElementsByTagName('input');
+	var trialtext=document.getElementById('trial_details').getElementsByTagName('textarea');
 	//inputs of phase section
 
-	var phaseinputs=document.getElementById('Phase_details').getElementsByTagName('input');
+	var phaseinputs=document.getElementById('phase_details').getElementsByTagName('input');
 	var trialdata={};
 			while(i<trialinputs.length)
 			{
@@ -55,7 +55,5 @@ function writeUserData(user,trialdata,phasedata) {
 				console.log("Document successfully written!")
 				 window.location.href=("LabMain.php")});
 		});
-
-
 
 }
