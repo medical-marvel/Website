@@ -42,7 +42,7 @@
 				<tr><th>Anxiety</th><td><input required class="w3-input" type="input" id="anxiety" name="e9"></td></tr>
 			</table>
 		</div>
-		<div id="Phase_details" style="margin-top: 10px">
+		<div id="phase_details" style="margin-top: 10px">
 			<h1><center><u>Session 1 Details</u></center></h1>
 			<table>
 				<tr><th>Starting Trial Date:</th><td><input required class="w3-input" type="Date" id="starting_date" name="s1"></td></tr>
