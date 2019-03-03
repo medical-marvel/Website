@@ -99,11 +99,21 @@ function loadtrial1(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			console.log(i);
+			header=data1.data()
+			console.log(header["Name"]);/*
+			var a = document.createElement("a"); 
+			var btn = document.createElement("BUTTON");  
+			btn.setAttribute('data-id',i);
+			btn.setAttribute('data-style',"float:left");
+			btn.setAttribute('onclick',"displayinfo('"+i+"')");
+			var t = document.createTextNode(i);  
+			btn.appendChild(t);
+			a.appendChild(btn);                                // Append the text to <button>
+			div.appendChild(a);*/
 			var optn= document.createElement("option");
 			optn.setAttribute("data-id",i);
 			optn.setAttribute("value",i); 
-			optn.textContent=data1["Name"];
+			optn.textContent=i;
 			info.appendChild(optn);
 		});
 		
