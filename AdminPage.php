@@ -56,21 +56,6 @@ require_once 'Header.php';
 			<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
 		</div>
 	</div>
-	<div class="w3-container" style="margin: 16px;padding: 12px;background-color: #ffffcc">
-		<h1>Patient</h1>
-		<div id="trialnav">
-			<select class="Yes" id="trialbar2" onchange="displayinfo2()">
-				<option value="volvo" disabled>Select Trial</option>
-			</select>
-		</div>
-		<div id="trialinfo2"> 
-
-		</div>
-		<div class="w3-section" id="try2" style="display:none;">
-			<button class="w3-button w3-green">Accept</button>
-			<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
-		</div>
-	</div>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Trials</h1>
 		<div id="trialnav">
