@@ -6,6 +6,7 @@
 	<script type="text/javascript">
 
 		window.onload = function () {
+			dataPoints=[];
 			var chart = new CanvasJS.Chart("chartContainer", {
 				title:{
 					text: "3 weeks patient feedbacks"
@@ -59,6 +60,7 @@
 				}
 				]
 			});
+			console.log(dataPoints);
 			chart.render();
 		}
 	</script>
