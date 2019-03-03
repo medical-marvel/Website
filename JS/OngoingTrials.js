@@ -78,6 +78,8 @@ function displayinfo(id)
 				var header = document.createElement("h4"); 
 				var div = document.createElement("div");
 				var btn=document.createElement("button");
+				var a=document.createElement("a");
+				a.setAttribute("href","ViewFeedback.php?t="+id+"&p="+phaseid);
 				btn.textContent="View Feedback";
 				btn.setAttribute("data-id",phaseid);
 				div.setAttribute("data-id",phaseid);
@@ -100,7 +102,8 @@ function displayinfo(id)
 			ul.appendChild(li);
 		}
 		div.appendChild(ul);
-		div.appendChild(btn);
+		a.appendChild(btn);
+		div.appendChild(a);
 		console.log( size);
 		console.log( size);
 		var modal=document.getElementById("modalbutton").setAttribute("onclick","addphase('"+size+"','"+id+"')");
