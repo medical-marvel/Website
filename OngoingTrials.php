@@ -24,10 +24,9 @@ require_once 'Header.php';
       </header>
       <div class="w3-container">
         <table>
-				<tr><th>Starting Trial Date:</th><td><input required class="w3-input" type="Date" id="Starting_Date" name="s1"></td></tr>
-				<tr><th>Ending Trial Date:</th><td><input required class="w3-input" type="Date" id="Ending_Date" name="e1"></td></tr>
-				<tr><th>No. of Patients :</th><td><input required class="w3-input" type="textbor" id="No. of Patients" name="p1"></td></tr>
-				<tr><th>status :</th><td><input required class="w3-input" type="text" id="Status" name="p1"></input></td></tr>
+				<tr><th>Starting Trial Date:</th><td><input required class="w3-input" type="Date" id="starting_date"></td></tr>
+				<tr><th>Ending Trial Date:</th><td><input required class="w3-input" type="Date" id="ending_date"></td></tr>
+				<tr><th>Status :</th><td><input required class="w3-input" type="text" id="status"></input></td></tr>
 
 		</table>
         <button id="modalbutton" class="w3-button w3-blue w3-round w3-center w3-hover-shadow w3-hover-blue w3-text-black">Submit</button>

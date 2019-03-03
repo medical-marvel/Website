@@ -16,10 +16,10 @@ require_once 'Header.php';
 			<div class="w3-col m6">
 				<h1 class="w3-center">Login</h1>
 				<a>User Name</a>
-				<input id="username" required class="w3-input  " autofocus type="text"  name="uname" placeholder="Enter Username">
+				<input id="username" required class="w3-input" autofocus type="text"  name="uname" placeholder="Enter Username">
 				<a>Password</a>
 				<input id="password" required class="w3-input w3-margin-bottom" type="password" name="" placeholder="Enter password">
-				<button id="Loginbutton" onclick="loginuser()" class="w3-button w3-blue w3-round w3-center w3-hover-shadow w3-hover-blue w3-text-black">Login</button><br>
+				<button id="login_button" onclick="loginuser()" class="w3-button w3-blue w3-round w3-center w3-hover-shadow w3-hover-blue w3-text-black">Login</button><br>
 				<a href="">Forgot Password</a>
 				<p>Don't have an account? <a href="LabRegistration.php">Register</a></p>	
 			</div>
