@@ -16,7 +16,8 @@ function Addtrial() {
 	var trialtext=document.getElementById('Trial_details').getElementsByTagName('textarea');
 	//inputs of phase section
 
-	var phaseinputs=document.getElementById('Phase_details').getElementsByTagName('input');
+	var side_effects=document.getElementById('side_effects').getElementsByTagName('input');
+	console.log(side_effects)
 	var trialdata={};
 			while(i<trialinputs.length)
 			{
@@ -30,19 +31,19 @@ function Addtrial() {
 				i++;
 			}
 	i=0;
-	var phasedata={};
-			while(i<phaseinputs.length)
+	var effectdata={};
+			while(i<side_effects.length)
 			{
-				phasedata[phaseinputs[i].id]=phaseinputs[i].value;
+				effectdata[side_effects[i].id]=side_effects[i].value;
 				i++;
 			}		
 console.log(trialdata);
-console.log(phasedata);
+console.log(effectdata);
 	var user = firebase.auth().currentUser;
-  	writeUserData(user,trialdata,phasedata);
+  	writeUserData(user,trialdata,effectdata);
 
 }
-function writeUserData(user,trialdata,phasedata) {
+function writeUserData(user,trialdata,effectdata) {
 	var database = firebase.firestore();
 	var i=0;
 	var cityRef = database.collection("Lab").doc(user.uid).collection("Trial");
@@ -50,10 +51,12 @@ function writeUserData(user,trialdata,phasedata) {
 		i=result.size;
 		i=i+1;
 		database.doc("Lab/"+user.uid+"/Trial/Trial_"+i).set(trialdata);
-			console.log(phasedata);
-			database.doc("Lab/"+user.uid+"/Trial/Trial_"+i+"/Phase/Phase_1").set(phasedata).then(function() {
-				console.log("Document successfully written!")
-				 window.location.href=("LabMain.php")});
+			console.log(effectdata);
+			database.doc("Lab/"+user.uid+"/Trial/Trial_"+i+"/SideEffect/SideEffect_1").set(effectdata).then(function() {
+				console.log("Document successfully written!");
+				window.location.href="LabMain.php";
+			});
+			
 		});
 
 
