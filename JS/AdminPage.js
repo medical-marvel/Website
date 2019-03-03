@@ -19,7 +19,8 @@ function loadtrial(){
 		data.forEach(data1 =>{
 			i=data1.id;
 			but=data1.data();
-			console.log(but['Name']);/*
+			var dname=but.id;
+			console.log(dname);/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
@@ -30,9 +31,9 @@ function loadtrial(){
 			a.appendChild(btn);                                // Append the text to <button>
 			div.appendChild(a);*/
 			var optn= document.createElement("option");
-			optn.setAttribute("data-id",but);
-			optn.setAttribute("value",but); 
-			optn.textContent=i;
+			optn.setAttribute("data-id",dname);
+			optn.setAttribute("value",but["Name"]); 
+			optn.textContent=dname;
 			info.appendChild(optn);
 		});
 		
@@ -42,6 +43,7 @@ function loadtrial(){
 function displayinfo()
 {
 	var id=document.getElementById("trialbar").value;
+	console.log(id);
 	$("#trialinfo").html('');
 	document.getElementById("try").style.display="block";
 	var exist=$("#div-"+id);
@@ -55,10 +57,12 @@ function displayinfo()
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	
+	console.log(id);
 	var datastored=database.doc("Doctor/"+(id)).get()
 	.then((snapshot) => {
+		console.log(snapshot);
 		data=snapshot.data();
+		console.log(data);
 		header.textContent=data["Name"];
 		div.appendChild(header);
 		//creating html 
