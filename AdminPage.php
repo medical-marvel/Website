@@ -16,11 +16,9 @@ require_once 'Header.php';
 				<option value="volvo" disabled>Select Trial</option>
 			</select>
 		</div>
-		<div  id="trialinfo"> 
-
-		</div>
+		<div  id="trialinfo"> </div>
 		<div class="w3-section" id="try" style="display:none;">
-			<button class="w3-button w3-green">Accept</button>
+			<button class="w3-button w3-green" onclick="MyDoc()">Accept</button>
 			<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
 		</div> 
 	</div>
