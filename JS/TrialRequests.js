@@ -63,6 +63,6 @@ function approve(id){
 			Status : "Approved"
 		}).then(function(){
 				console.log("done");
-				document.getElementbyId("div"+id).css.style.display=none;
+				document.getElementById("div-"+id).css.style.display='none';
 				})
 }
