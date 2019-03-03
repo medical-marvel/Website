@@ -17,11 +17,13 @@ function myfunction()
 			id=patient.id;
 
 
-	btn.setAttribute("onclick","approve('"+id+"')");
+	
 			var div = document.createElement("div"); 
 				var btn=document.createElement("button");
+				btn.setAttribute("onclick","approve('"+id+"')");
 			div.setAttribute("data-id",id);
 			div.setAttribute("id","div-"+id);
+			div.setAttribute("style","float: left;");
 			var header = document.createElement("h4");
 
 	header.textContent=id;
@@ -45,14 +47,22 @@ function myfunction()
 
 					}
 				})
-			
-			btn.textContent=id;
+
+			btn.textContent="Approve";
 	div.appendChild(btn);
 			info.appendChild(div);
 			});
 
 		})
-		
+}
+function approve(id){
 
-
+	var user = firebase.auth().currentUser;
+	var database = firebase.firestore();
+	database.doc("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient/"+id).update({
+			Status : "Approved"
+		}).then(function(){
+				console.log("done");
+				document.getElementById("div-"+id).css.style.display='none';
+				})
 }
