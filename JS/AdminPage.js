@@ -100,7 +100,6 @@ function loadtrial1(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-<<<<<<< HEAD
 			console.log(i);
 			var but=data1.data().Name;
 			//var dname=but.Name;
