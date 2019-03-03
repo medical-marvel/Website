@@ -7,8 +7,7 @@
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 	<script type="text/javascript" src="JS/ViewFeedback.js"></script>
 </head>
-<body>
-	<button onclick="Details()">clickme</button>
+<body onload="Details()">
 	<h1><center><u>Lab and Phase Details</u></center></h1>
 	<div id="details"></div>
 	<div id="feedback_chart" style="height: 300px; width: 100%;margin-top:100px;"></div>
