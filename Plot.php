@@ -8,7 +8,7 @@
 		window.onload = function () {
 			var chart = new CanvasJS.Chart("chartContainer", {
 				title:{
-					text: "My First Chart in CanvasJS"
+					text: "3 weeks patient feedbacks"
 				},
 				animationEnabled:true,
 				data: [
