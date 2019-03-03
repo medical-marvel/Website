@@ -57,6 +57,7 @@ function myfunction()
 }
 function approve(id){
 
+console.log(id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	database.doc("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient/"+id).update({
