@@ -18,22 +18,24 @@ function loadtrial(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			but=data1.data();
-			var dname=but.id;
-			console.log(dname);/*
+			console.log(data1);
+			var but=data1.data().Name;
+			//var dname=but.Name;
+			console.log(but);
+			/*
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
-			btn.setAttribute('onclick',1"displayinfo('"+i+"')");
+			btn.setAttribute('onclick',"displayinfo('"+i+"')");
 			var t = document.createTextNode(i);  
 			btn.appendChild(t);
 			a.appendChild(btn);                                // Append the text to <button>
 			div.appendChild(a);*/
 			var optn= document.createElement("option");
-			optn.setAttribute("data-id",dname);
-			optn.setAttribute("value",but["Name"]); 
-			optn.textContent=dname;
+			optn.setAttribute("data-id",i);
+			optn.setAttribute("value",i); 
+			optn.textContent=but;
 			info.appendChild(optn);
 		});
 		
@@ -43,7 +45,6 @@ function loadtrial(){
 function displayinfo()
 {
 	var id=document.getElementById("trialbar").value;
-	console.log(id);
 	$("#trialinfo").html('');
 	document.getElementById("try").style.display="block";
 	var exist=$("#div-"+id);
@@ -57,13 +58,13 @@ function displayinfo()
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	console.log(id);
+	
 	var datastored=database.doc("Doctor/"+(id)).get()
 	.then((snapshot) => {
-		console.log(snapshot);
 		data=snapshot.data();
-		console.log(data);
-		header.textContent=data["Name"];
+		var but=data.Name;
+			//var dname=but.Name;
+		header.textContent=but;
 		div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
@@ -94,13 +95,16 @@ function loadtrial1(){
 	var info=document.querySelector("#trialbar1");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	var datastored=database.collection("Lab").get()
+	var datastored=database.collection("Lab").where("Status", "==", "Pending").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			console.log(i);/*
-			var a = document.createElement("a"); 
+			console.log(i);
+			var but=data1.data().Name;
+			//var dname=but.Name;
+			console.log(but);
+			/*var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
 			btn.setAttribute('data-style',"float:left");
@@ -112,11 +116,9 @@ function loadtrial1(){
 			var optn= document.createElement("option");
 			optn.setAttribute("data-id",i);
 			optn.setAttribute("value",i); 
-			optn.textContent=i;
+			optn.textContent=but;
 			info.appendChild(optn);
 		});
-		
-		
 	});
 }
 function displayinfo1()
@@ -135,11 +137,13 @@ function displayinfo1()
 	div.setAttribute("id","div-"+id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	header.textContent=id;
-	div.appendChild(header);
 	var datastored=database.doc("Lab/"+(id)).get()
 	.then((snapshot) => {
 		data=snapshot.data();
+		var but=data.Name;
+			//var dname=but.Name;
+		header.textContent=but;
+		div.appendChild(header);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){		
@@ -234,6 +238,7 @@ function displayinfo2()
 	});
 }
 /*Trial*/
+
 function loadtrial3(){
 
 	var i=1;
@@ -247,7 +252,7 @@ function loadtrial3(){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			console.log(i);/*
+			/*console.log(i);
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
@@ -263,16 +268,12 @@ function loadtrial3(){
 			optn.textContent=i;
 			info.appendChild(optn);
 		});
-		
-		
 	});
 }
 function displayinfo3()
 {
 	var id=document.getElementById("trialbar3").value;
 	var exist=$("#div-"+id);
-	$("#trialinfo3").html('');
-	document.getElementById("try3").style.display="block";
 	if(exist.length!=0){
 		return;
 	}
