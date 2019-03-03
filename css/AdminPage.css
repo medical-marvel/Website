@@ -1,20 +1,8 @@
-
-
-/*#trialinfo div
-{
-width: 300px;padding: 8px;margin: 8px;float: left;display:inline-block;float:left;
-}
-
-	.w3-dropdown-hover .w3-button
-	{
-		width: 100%;
-	}*/
-
-#Yes
+.Yes
 {
 	background-color: #1a64ec;
 }
-#Yes button
+.Yes button
 {
 	margin: 10px;
 	padding: 2px 8px;
@@ -22,7 +10,7 @@ width: 300px;padding: 8px;margin: 8px;float: left;display:inline-block;float:lef
 	background-color: #134bb1;
 	color: #fff8f5;
 }
-#No div
+.No div
 {
 	display: inline-block;
 	margin: 10px;
