@@ -7,11 +7,13 @@ function loadtrial(){
 	var info=document.querySelector("#container");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Ongoing").get()
+	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("status", "==", "Ongoing").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
+		console.log(data);
 		data.forEach(data1 =>{
 			i=data1.id;
+			console.log(data1);
 			var a = document.createElement("a"); 
 			var btn = document.createElement("BUTTON");  
 			btn.setAttribute('data-id',i);
@@ -72,6 +74,7 @@ function displayinfo(id)
 			var phasesize=phase.size;
 			console.log(size);
 			phase.forEach((snapshot) => {
+				console.log(snapshot);
 				data=snapshot.data();
 				phaseid=snapshot.id;
 				var info=document.querySelector("#phases");
@@ -116,6 +119,7 @@ function displayinfo(id)
 }
 function addphase(phaseid,id)
 {
+
 	var i=0;
 	if(phaseid>=4){
 		alert("4 trials are already completed");
