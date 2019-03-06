@@ -9,7 +9,7 @@ function loadtrial(){
 	var info=document.querySelector("#trialbar");
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
-	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Completed").get()
+	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("status", "==", "Completed").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
@@ -35,6 +35,7 @@ function loadtrial(){
 function displayinfo()
 {
 	var id=document.getElementById("trialbar").value;
+	console.log(id);
 	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
@@ -50,7 +51,8 @@ function displayinfo()
 	div.appendChild(header);
 	var datastored=database.doc("Lab/"+user.uid+"/Trial/"+(id)).get()
 	.then((snapshot) => {
-		data=snapshot.data();
+		data=snapshot.data();;
+		console.log(data);
 		//creating html 
 		var ul = document.createElement("ul");
 		for(name in data){		

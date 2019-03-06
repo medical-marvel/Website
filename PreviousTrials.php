@@ -10,7 +10,7 @@ require_once 'Header.php';
 <body onload="load()">
 	<div id="trialnav" class="w3-card-4">
 		<select id="trialbar" onchange="displayinfo()">
-  <option value="volvo" disabled>Select Trial
+  <option value="volvo" disabled selected="selected">Select Trial
 </select>
 </div>
 <div class=" w3-card-4" id="trialinfo" >

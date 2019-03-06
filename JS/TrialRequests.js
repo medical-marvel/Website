@@ -8,7 +8,7 @@ function myfunction()
 	var database = firebase.firestore();
 	var i=0;
 
-	var ref=database.collection("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient");
+	var ref=database.collection("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient").where("Approval","==","Pending");
 	ref.get()
 	.then(patients =>{
 
@@ -28,24 +28,15 @@ function myfunction()
 
 	header.textContent=id;
 	div.appendChild(header);
-			ref=database.doc("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient/"+name);
+			ref=database.doc("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient/"+id);
 			ref.get()
 			.then(doc =>{
-
+				console.log(doc);
 				data=doc.data();
 				console.log(data);
 					id=data.id;
 					console.log(data);
 				console.log(data["Approval"]);
-					if(data[status]=="Pending"){
-						console.log("in");
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
-	
-	
-	
-
-					}
 				})
 
 			btn.textContent="Approve";
@@ -61,9 +52,9 @@ console.log(id);
 	var user = firebase.auth().currentUser;
 	var database = firebase.firestore();
 	database.doc("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient/"+id).update({
-			Status : "Approved"
+			Approval : "Approved"
 		}).then(function(){
 				console.log("done");
-				document.getElementbyId("div"+id).css.style.display=none;
+				document.getElementById("div-"+id).style.display="none";
 				})
 }

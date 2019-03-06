@@ -50,7 +50,6 @@ function displayinfo()
 	var datastored=database.doc("Doctor/"+id).get()
 	.then((snapshot) => {
 		data=snapshot.data();
-		 var n=document.getString("id");
 		console.log(data.id);
 		var div = document.createElement("div");
 		div.setAttribute("data-id",id);

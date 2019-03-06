@@ -13,7 +13,7 @@ require_once 'Header.php';
 		<h1>Doctors</h1>
 		<div id="trialnav">
 			<select class="Yes" id="trialbar" onchange="displayinfo()">
-				<option value="volvo" disabled>Select Trial</option>
+				<option value="volvo" disabled selected="selected">Select Doctor</option>
 			</select>
 		</div>
 		<div  id="trialinfo"> </div>
@@ -45,7 +45,7 @@ require_once 'Header.php';
 		<h1>Labs</h1>
 		<div id="trialnav">
 			<select class="Yes" id="trialbar1" onchange="displayinfo1()">
-				<option value="volvo" disabled>Select Trial</option>
+				<option value="volvo" disabled selected="selected">Select Lab</option>
 			</select>
 		</div>
 		<div  id="trialinfo1"> 
@@ -60,7 +60,7 @@ require_once 'Header.php';
 		<h1>Trials</h1>
 		<div id="trialnav">
 			<select class="Yes" id="trialbar3" onchange="displayinfo3()">
-				<option value="volvo" disabled>Select Trial</option>
+				<option value="volvo" disabled selected="selected">Select Trial</option>
 			</select>
 		</div>
 		<div id="trialinfo3"> 
