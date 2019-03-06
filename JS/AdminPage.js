@@ -4,24 +4,18 @@ function load(){
 	setTimeout(loadtrial3,1000);
 }
 /*Doctor*/
+
 var i=1;
 function loadtrial(){
-	
-/*
-	var phase=document.getElementById("phases");*/
+window.user = firebase.auth().currentUser;
+window.database = firebase.firestore();
 	var info=document.querySelector("#trialbar");
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
 	var datastored=database.collection("Doctor").where("Status", "==", "Pending").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
 			i=data1.id;
-			console.log(i);
 			var but=data1.data().Name;
-			//var dname=but.Name;
-			console.log(but);
-
 			var optn= document.createElement("option");
 			optn.setAttribute("data-id",i);
 			optn.setAttribute("value",i); 
@@ -44,8 +38,6 @@ function displayinfo()
 	var info=document.querySelector("#trialinfo");
 	var header = document.createElement("h4"); 
 	var div = document.createElement("div"); 
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
 	var t=1;
 	var datastored=database.doc("Doctor/"+id).get()
 	.then((snapshot) => {
@@ -75,10 +67,19 @@ function displayinfo()
 			ul.appendChild(li);
 		}
 		div.appendChild(ul);
-
-		var btn = document.createElement("BUTTON");
-		btn.setAttribute('onclick',"function MyDoc("+n+")");
-		div.appendChild(btn);
+		console.log(data.id);
+		
+		var approve = document.createElement("BUTTON");
+		approve.setAttribute('onclick',"approvedoctor('"+id+"')");
+		approve.textContent="Approve";
+		approve.setAttribute("class","w3-button w3-green w3-round  w3-hover-shadow w3-hover-blue w3-text-black ");
+		div.appendChild(approve);
+		
+		var reject = document.createElement("BUTTON");
+		reject.setAttribute('onclick',"rejectdoctor('"+id+"')");
+		reject.textContent="Reject";
+		reject.setAttribute("class","w3-margin-left w3-button w3-red w3-round  w3-hover-shadow w3-hover-blue w3-text-black ");
+		div.appendChild(reject);
 		info.appendChild(div);
 
 		})
@@ -87,20 +88,25 @@ function displayinfo()
 
 
 
-function MyDoc(j)
+function approvedoctor(j)
 {
 	//var user=document.getElementById("chase").value;
-	var database = firebase.firestore();
+	
 	database.collection("Doctor/").doc(j).update({
 	Status: "Approved"
 	}).then(function() {
 	console.log("Document successfully updated!");
 	});
+}
+function rejectdoctor(j)
+{
+	//var user=document.getElementById("chase").value;
 	
-		/*database.collection("Doctor").doc(i).update(
-   			{ "Status": "Approved"}
-			);*/
-
+	database.collection("Doctor/").doc(j).update({
+	Status: "Rejected"
+	}).then(function() {
+	console.log("Document successfully updated!");
+	});
 }
 
 
@@ -111,8 +117,6 @@ function loadtrial1(){
 	/*
 	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar1");
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
 	var datastored=database.collection("Lab").where("Status", "==", "Pending").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
@@ -133,7 +137,6 @@ function displayinfo1()
 {
 	var id=document.getElementById("trialbar1").value;
 	$("#trialinfo1").html('');
-	document.getElementById("try1").style.display="block";
 	var exist=$("#div-"+id);
 	if(exist.length!=0){
 		return;
@@ -143,8 +146,6 @@ function displayinfo1()
 	var div = document.createElement("div");
 	div.setAttribute("data-id",id);
 	div.setAttribute("id","div-"+id);
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
 	var datastored=database.doc("Lab/"+(id)).get()
 	.then((snapshot) => {
 		data=snapshot.data();
@@ -167,11 +168,37 @@ function displayinfo1()
 			li.appendChild(p2);
 			ul.appendChild(li);
 		}
+
 		div.appendChild(ul);
+		var approve = document.createElement("BUTTON");
+		approve.setAttribute('onclick',"approvelab('"+id+"')");
+		approve.textContent="Approve";
+		approve.setAttribute("class","w3-button w3-green w3-round  w3-hover-shadow w3-hover-blue w3-text-black ");
+		div.appendChild(approve);
+		
+		var reject = document.createElement("BUTTON");
+		reject.setAttribute('onclick',"rejectlab('"+id+"')");
+		reject.textContent="Reject";
+		reject.setAttribute("class","w3-margin-left w3-button w3-red w3-round  w3-hover-shadow w3-hover-blue w3-text-black ");
+		div.appendChild(reject);
 		info.appendChild(div);
 	});
 }
+function approvelab(id){
+	database.collection("Lab/").doc(id).update({
+		Status: "Approved"
+		}).then(function() {
+		console.log("Document successfully updated!");
+		});
+}
 
+function rejectlab(id){
+	database.collection("Lab/").doc(id).update({
+		Status: "Rejected"
+		}).then(function() {
+		console.log("Document successfully updated!");
+		});
+}
 
 /*Trial*/
 
@@ -181,9 +208,7 @@ function loadtrial3(){
 	/*
 	var phase=document.getElementById("phases");*/
 	var info=document.querySelector("#trialbar3");
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
-	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("Status", "==", "Ongoing").get()
+	var datastored=database.collection("Lab/"+user.uid+"/Trial").where("status", "==", "Pending").get()
 	.then(function(data){
 		var div = document.createElement("div"); 
 		data.forEach(data1 =>{
@@ -208,8 +233,6 @@ function displayinfo3()
 	var div = document.createElement("div");
 	div.setAttribute("data-id",id);
 	div.setAttribute("id","div-"+id);
-	var user = firebase.auth().currentUser;
-	var database = firebase.firestore();
 	header.textContent=id;
 	div.appendChild(header);
 	var datastored=database.doc("Lab/"+user.uid+"/Trial/"+(id)).get()
@@ -231,6 +254,33 @@ function displayinfo3()
 			ul.appendChild(li);
 		}
 		div.appendChild(ul);
+		var approve = document.createElement("BUTTON");
+		approve.setAttribute('onclick',"approvetrial('"+id+"')");
+		approve.textContent="Approve";
+		approve.setAttribute("class","w3-button w3-green w3-round  w3-hover-shadow w3-hover-blue w3-text-black ");
+		
+		var reject = document.createElement("BUTTON");
+		reject.setAttribute('onclick',"rejecttrial('"+id+"')");
+		reject.textContent="Reject";
+		reject.setAttribute("class","w3-margin-left w3-button w3-red w3-round  w3-hover-shadow w3-hover-blue w3-text-black ");
+		
+		div.appendChild(approve);
+		div.appendChild(reject);
 		info.appendChild(div);
 	});
+}
+function approvetrial(id){
+	database.doc("Lab/"+user.uid+"/Trial/"+id).update({
+		status: "Approved"
+		}).then(function() {
+		console.log("Document successfully updated!");
+		});
+}
+
+function approvetrial(id){
+	database.doc("Lab/"+user.uid+"/Trial/"+id).update({
+		status: "Rejected"
+		}).then(function() {
+		console.log("Document successfully updated!");
+		});
 }

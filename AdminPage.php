@@ -17,10 +17,7 @@ require_once 'Header.php';
 			</select>
 		</div>
 		<div  id="trialinfo"> </div>
-		<div class="w3-section" id="try" style="display:none;">
-			<button class="w3-button w3-green" onclick="MyDoc()">Accept</button>
-			<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
-		</div> 
+		
 	</div>
 	<div id="decline_reason" class="w3-modal">
 		<div class="w3-modal-content w3-card-4 w3-white">
@@ -51,10 +48,6 @@ require_once 'Header.php';
 		<div  id="trialinfo1"> 
 
 		</div>
-		<div class="w3-section" id="try1" style="display:none;">
-			<button class="w3-button w3-green">Accept</button>
-			<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
-		</div>
 	</div>
 	<div class="w3-container w3-teal" style="margin: 16px;padding: 12px">
 		<h1>Trials</h1>
@@ -66,10 +59,5 @@ require_once 'Header.php';
 		<div id="trialinfo3"> 
 
 		</div>
-		<div class="w3-section" id="try3" style="display:none;">
-			<button class="w3-button w3-green">Accept</button>
-			<button class="w3-button w3-red" onclick="document.getElementById('decline_reason').style.display='block'">Decline</button> 
-		</div>
-	</div>
 </body>
 </html>
