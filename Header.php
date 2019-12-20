@@ -58,6 +58,7 @@
 <script >
 	function logout(){
   firebase.auth().signOut();
+  localStorage.removeItem("name");
 }
 </script>
 </head>
@@ -67,7 +68,7 @@
 		<h1 class="w3-bar-item ">Medical Marvel</h1>
 		<div style="margin-top: 50px; ">
 			<a style="text-decoration: none;" class="w3-bar-item w3-right w3-right" href="">Services</a>
-			<a style="text-decoration: none;" class="w3-bar-item w3-right w3-right" href="">Contact</a>
+			<a style="text-decoration: none;" class="w3-bar-item w3-right w3-right" href="ContactUs.php">Contact</a>
 			<a id="home"style="text-decoration: none; display: none" href="LabMain.php"><i class="fa fa-home w3-bar-item w3-right w3-right" ></i></a>
 			<a id="logoutdisplay" style="text-decoration: none; display: none;" class="w3-bar-item w3-right w3-right" onclick="logout()" href="Login.php">Logout</a>
 
@@ -91,16 +92,23 @@
 	</script>
 	<script type="text/javascript">
 			var database = firebase.firestore();
+			if(localStorage.getItem("name"))
+				{
+
+			$("#logoutdisplay").css('display','block');
+			$("#home").css('display','block');	
+				}
 	var db=database.collection("Lab").get()
 	.then((snapshot) =>{
 
-	var user = firebase.auth().currentUser;
+	/*var user = firebase.auth().currentUser;
 		if(user){
 			$("#logoutdisplay").css('display','block');
 			$("#home").css('display','block');
 		}
 		else(
-			console.log("no user"));
+			console.log("no user")
+			);*/
 		})
 		/*var db1=db.collection("Trial");
 		console.log(db1);	

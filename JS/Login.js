@@ -19,6 +19,7 @@ for (var i = 0; i < inputs.length; i++) {
        console.log(user.displayName);
        var data=user.displayName;
        window.location.href= data+'Main.php';
+       localStorage.setItem("name", data);
     })
     .catch(function(error) {
     // Handle Errors here.
