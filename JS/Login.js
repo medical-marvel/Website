@@ -42,7 +42,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
   } else {
     // No user is signed in.
-    console.log(user);
+    console.log("no user signed in");
   }
 });
 
