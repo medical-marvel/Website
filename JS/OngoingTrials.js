@@ -30,10 +30,12 @@ function loadtrial(){
 		
 		$("#content").css("display","block");
 		$("#load").css("display","none");
+		$("#addphase").css("display","none");
 	});
 }
 function displayinfo(id)
 {
+
 	var exist=$("#div-"+id);
 	$("#phases").html('');
 	if(exist.length!=0){
@@ -114,7 +116,9 @@ function displayinfo(id)
 		var modal=document.getElementById("modalbutton").setAttribute("onclick","addphase('"+size+"','"+id+"')");
 
 		info.appendChild(div);
+
 	});
+			$("#addphase").css("display","block");
 			
 		});
 	});

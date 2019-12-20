@@ -53,7 +53,7 @@
 
 
 		<div class="w3-center">
-			<button style="margin-top: 10px;margin-bottom: 10px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
+			<button style="margin-top: 10px;margin-bottom: 50px; " class=" w3-button w3-col s4 w3-bar-item w3-button w3-blue w3-round-xxlarge w3-display-center w3-hover-shadow w3-hover-blue w3-text-black" id="addtrial" onclick="Addtrial()" style="width:100px;">Submit</button>
 		</div>
 	</div>
 </body>

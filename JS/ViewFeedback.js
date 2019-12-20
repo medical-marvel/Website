@@ -63,6 +63,8 @@ function details()
 					data
 				});
 				feedback_chart.render();
+				$("#container").css("display","block");
+		$("#load").css("display","none");
 			})
 			.catch(error =>{
 				console.log(error);

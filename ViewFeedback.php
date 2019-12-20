@@ -8,9 +8,15 @@
 	<script type="text/javascript" src="JS/ViewFeedback.js"></script>
 </head>
 <body onload="Details()">
+	
 	<h1><center><u>Lab and Phase Details</u></center></h1>
+	<div id="load" >
+<div class="loader"></div>
+</div>
+	<div id="container" style="display: none">
 	<div id="details"></div>
 	<div id="feedback_chart" style="height: 300px; width: 100%;margin-top:100px;"></div>
 	<div id="patient_chart" style="height: 300px; width: 100%;margin-top:100px;"></div>
+	</div>
 </body>
 </html>
