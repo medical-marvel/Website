@@ -46,6 +46,7 @@ function details()
 				})
 				data.push({type: "column",dataPoints});
 				dataPoints=[];
+				console.log(data);
 			}).then(function(){
 				var feedback_chart = new CanvasJS.Chart("feedback_chart",
 		{

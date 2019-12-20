@@ -9,12 +9,21 @@ require_once 'Header.php';
 </head>
 <body onload="load()">
 	<h1 style="font-size: 40px;"><center><u>Ongoing Trials</u></center></h1>
-	<div id="container">
+  <div id="content" style="display: none;">
+	<div id="container" style="
+    display: flex;
+    justify-content: center;
+">
 </div>
+<div style="display: flex;flex-direction: column;">
 <div class=" w3-card-4" id="phases">
+</div><br><br>
+ <button style="align-self: center;" id="addphase"  onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue w3-round  w3-hover-shadow w3-hover-blue w3-text-black">Add New Phase</button>
+ </div>
+ </div>
+ <div id="load" >
+<div class="loader"></div>
 </div>
- <button id="addphase" onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-blue w3-round w3-center w3-hover-shadow w3-hover-blue w3-text-black">Add New Phase</button>
-
   <div id="id01" class="w3-modal">
     <div class="w3-modal-content w3-animate-top w3-card-4">
       <header class="w3-container w3-teal"> 
@@ -32,6 +41,7 @@ require_once 'Header.php';
         <button id="modalbutton" class="w3-button w3-blue w3-round w3-center w3-hover-shadow w3-hover-blue w3-text-black">Submit</button>
       </div>
     </div>
+
   </div>
 </body>
 </html>

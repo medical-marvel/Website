@@ -10,7 +10,11 @@ require_once 'Header.php';
 	<script src="JS/TrialRequests.js"></script>
 </head>
 <body >
-	<div class="w3-card-4" id="container">
+	<h1 style="font-size: 40px;"><center><u>Trial Requests</u></center></h1>
+	<div id="load" >
+<div class="loader"></div>
+</div>
+	<div class="w3-card-4" id="container" style="display: none;justify-content: center">
 <div class=" w3-card-4" id="applications">
 </div> 
 </div>

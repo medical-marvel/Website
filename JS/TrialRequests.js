@@ -13,11 +13,7 @@ function myfunction()
 	.then(patients =>{
 
 		patients.forEach(patient =>{
-			
 			id=patient.id;
-
-
-	
 			var div = document.createElement("div"); 
 				var btn=document.createElement("button");
 				btn.setAttribute("onclick","approve('"+id+"')");
@@ -25,7 +21,6 @@ function myfunction()
 			div.setAttribute("id","div-"+id);
 			div.setAttribute("style","float: left;");
 			var header = document.createElement("h4");
-
 	header.textContent=id;
 	div.appendChild(header);
 			ref=database.doc("Lab/"+user.uid+"/Trial/Trial_1/Phase/Phase_1/Patient/"+id);
@@ -43,7 +38,8 @@ function myfunction()
 	div.appendChild(btn);
 			info.appendChild(div);
 			});
-
+			$("#container").css("display","flex");
+		$("#load").css("display","none");
 		})
 }
 function approve(id){
