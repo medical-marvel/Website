@@ -4,6 +4,8 @@ function Details(){
 function details()
 {
 	var data=[];
+	var date;
+	var dataDict={};
 	var dataPoints=[];
 	var l=location.href;
 	console.log(l);
@@ -21,47 +23,50 @@ function details()
 			ref.get()
 			.then(doc =>{
 				doc.forEach(insidedoc =>{
-
 					var data1=insidedoc.data();
-
-					var a;
+					date=data1["date"];
 					for(name in data1)
 					{
 						if(name!="date")
 						{
+							if (!(name in dataDict))
+							{
+								dataDict[name]=0;
+							}
 							if(data1[name]=="yes")
 							{
-								a=1;
+								dataDict[name]+=1;
 							}
-							else
-							{
-								a=0;
-							}
-							dataPoints.push({
-								label: name,
-								y: a
-							})
 						}
 					}
 				})
-				data.push({type: "column",dataPoints});
+				for(key in dataDict)
+				{
+					dataPoints.push({
+						label: key,
+						y: dataDict[key]
+					})
+				}
+				data.push({type:"column", name: date, showInLegend:true, dataPoints});
 				dataPoints=[];
-			}).then(function(){
+				dataDict={};
+				console.log(data);
+			})
+			.then(function(){
 				var feedback_chart = new CanvasJS.Chart("feedback_chart",
-		{
-			title:
-			{
-				text: "Overall Phase"
-			},
-			animationEnabled:true,
-			data
+				{
+					title:
+					{
+						text: "Overall Phase"
+					},
+					animationEnabled:true,
+					data
+				});
+				feedback_chart.render();
+			})
+			.catch(error =>{
+				console.log(error);
+			})
 		});
-			feedback_chart.render();
-		})
-		.catch(error =>{
-			console.log(error);
-						})
-		});
-		
 	})
 }
