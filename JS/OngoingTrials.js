@@ -28,6 +28,8 @@ function loadtrial(){
 		});
 		info.appendChild(div);
 		
+		$("#content").css("display","block");
+		$("#load").css("display","none");
 	});
 }
 function displayinfo(id)

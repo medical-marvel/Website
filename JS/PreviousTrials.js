@@ -30,6 +30,8 @@ function loadtrial(){
 			optn.textContent=i;
 			info.appendChild(optn);
 		});
+		$("#trialnav").css("display","block");
+		$("#load").css("display","none");
 	});
 }
 function displayinfo()
