@@ -4,14 +4,10 @@ require_once 'Header.php';
 <!DOCTYPE html>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/LabMain.css">
-<script type="text/javascript">
-</script>
 </head>
 <body>
 	<!-- Header section -->
 	<!-- Card section -->
-	<script type="text/javascript">
-	</script>
 	<div class="cards">
 		<ul class="grid">
 			<li>
@@ -40,7 +36,6 @@ require_once 'Header.php';
 			</li>
 		</ul>
 	</div>
-
 	<!-- Footer section -->
 	<div class="footer">
 		&copy:2019 by Medical Marvel Developer
